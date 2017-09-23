@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="907a045c-e36f-4623-8cd2-e04e2fd9f272" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GatherData.java" afterPath="$PROJECT_DIR$/src/GatherData.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,7 +93,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="831" />
     <option name="width" value="3024" />
     <option name="height" value="2055" />
@@ -271,7 +268,7 @@
       <workItem from="1505937612408" duration="1481000" />
       <workItem from="1505939323754" duration="1031000" />
       <workItem from="1506016487451" duration="1189000" />
-      <workItem from="1506131786955" duration="1227000" />
+      <workItem from="1506131786955" duration="1262000" />
     </task>
     <task id="LOCAL-00001" summary="oops, mislabelled">
       <created>1505938741097</created>
@@ -280,14 +277,21 @@
       <option name="project" value="LOCAL" />
       <updated>1505938741097</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="oops, mislabelled">
+      <created>1506133027292</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1506133027292</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4928000" />
+    <option name="totallyTimeSpent" value="4963000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1292" height="692" extended-state="6" />
+    <frame x="-6" y="-6" width="1292" height="692" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
