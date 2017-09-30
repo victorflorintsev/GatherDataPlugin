@@ -2,6 +2,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
@@ -10,6 +11,7 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.util.PsiTreeUtil;
+import org.jetbrains.annotations.NotNull;
 
 /*
 This class defines the action that happens when the sidebar button is clicked.
@@ -17,7 +19,17 @@ Action classes are the basis for how IntelliJ plugin development work, and each
 action extends the AnAction Interface.
  */
 
-public class GatherData extends AnAction {
+public class GatherData extends AnAction implements ApplicationComponent {
+    public void initComponent() {
+        System.out.println("I'm alive! (GatherData)");
+    }
+
+    public void disposeComponent() {
+        System.out.println("I'm dead! (GatherData)");
+
+    }
+
+
     @Override
     public void actionPerformed(AnActionEvent event) {
         /* Here is where the main code lies for what happens on a click.
@@ -54,6 +66,10 @@ public class GatherData extends AnAction {
         }
         // up to here is what gets the dropdown option to show up
         return psiClass;
+    }
+    @NotNull
+    public String getComponentName() {
+        return "GatherDataPlugin";
     }
 }
 
