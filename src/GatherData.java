@@ -56,3 +56,22 @@ public class GatherData extends AnAction {
         return psiClass;
     }
 }
+
+//project.getMessageBus().connect(/some disposable/).subscribe(ExecutionManager.EXECUTION_TOPIC, new ExecutionListener() {
+//@Override
+//public void processStarted(@NotNull String executorId, @NotNull ExecutionEnvironment env, @NotNull ProcessHandler handler) {
+//        //here you can add listener to existing 'live' output console
+//
+//        handler.addProcessListener(new ProcessAdapter() {
+//@Override
+//public void onTextAvailable(ProcessEvent event, Key outputType) {
+//        ProcessHandler processHandler = event.getProcessHandler();
+//        if (outputType != ProcessOutputTypes.STDERR) return;
+//            String text = event.getText();
+//        if (text != null && text.toLowerCase().contains("error")) {
+//            new Notification("error-message", processHandler.toString(), text, NotificationType.ERROR).notify(project);
+//        }
+//}
+//        });
+//        }
+//        });
