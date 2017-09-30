@@ -1,4 +1,5 @@
 <idea-plugin>
+
   <id>com.your.company.unique.plugin.id</id>
   <name>Plugin display name here</name>
   <version>1.0</version>
@@ -24,14 +25,19 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-  </extensions>
-
   <actions>
     <action class="GatherData" id="RightClickButton" text="Gather Data">
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
   </actions>
 
+  <application-components>
+    <component>
+      <implementation-class>BackgroundActivityComponent</implementation-class>
+    </component>
+  </application-components>
+
+
+
 </idea-plugin>
+

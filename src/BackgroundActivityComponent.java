@@ -8,14 +8,17 @@ public class BackgroundActivityComponent implements ApplicationComponent {
 
     public void initComponent() {
         LOG.info("Initializing plugin data structures");
+        System.out.println("I'm alive! (BackgroundActivityComponent)");
     }
 
     public void disposeComponent() {
         LOG.info("Disposing plugin data structures");
+        System.out.println("I'm dead! (BackgroundActivityComponent)");
+
     }
 
     @NotNull
     public String getComponentName() {
-        return "myApplicationComponent";
+        return "BackgroundActivityComponent";
     }
 }
