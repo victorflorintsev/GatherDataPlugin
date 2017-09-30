@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/META-INF/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BackgroundActivityComponent.java" afterPath="$PROJECT_DIR$/src/BackgroundActivityComponent.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +29,7 @@
       <file leaf-file-name="BackgroundActivityComponent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackgroundActivityComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
+            <state relative-caret-position="287">
               <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -81,6 +80,11 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="victorflorintsev &lt;victorflorintsev1996@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -298,7 +302,7 @@
       <workItem from="1506436866951" duration="57000" />
       <workItem from="1506441195314" duration="92000" />
       <workItem from="1506441617857" duration="23000" />
-      <workItem from="1506732895893" duration="2320000" />
+      <workItem from="1506732895893" duration="2377000" />
     </task>
     <task id="LOCAL-00001" summary="oops, mislabelled">
       <created>1505938741097</created>
@@ -321,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506735667095</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created a component that is initialized when a project is opened, screams &quot;I'm alive&quot;">
+      <created>1506735867355</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1506735867355</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7455000" />
+    <option name="totallyTimeSpent" value="7512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1292" height="692" extended-state="6" />
@@ -400,7 +411,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="oops, mislabelled" />
     <MESSAGE value="Trying out ApplicationComponent interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying out ApplicationComponent interface" />
+    <MESSAGE value="Created a component that is initialized when a project is opened, screams &quot;I'm alive&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a component that is initialized when a project is opened, screams &quot;I'm alive&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -653,7 +665,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackgroundActivityComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="287">
           <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
