@@ -5,6 +5,7 @@ import com.intellij.ide.errorTreeView.ErrorTreeElement;
 import com.intellij.ide.errorTreeView.ErrorTreeElementKind;
 import com.intellij.ide.errorTreeView.ErrorViewStructure;
 import com.intellij.ide.errorTreeView.NewErrorTreeViewPanel;
+import com.intellij.ide.errorTreeView.impl.ErrorViewTextExporter;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.diagnostic.Logger;
@@ -72,15 +73,18 @@ public class GatherData extends AnAction implements ApplicationComponent {
         Set<ErrorTreeElementKind> setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
 
         ErrorViewStructure EVS = getErrorViewStructure(project);
-
+        String output = "";
         if (EVS.hasMessages(setOfTypesToFind)) {
-            // if the Error View Structure has messages
-            ErrorTreeElement element = EVS.getFirstMessage(ErrorTreeElementKind.ERROR);
-            System.out.println(element.toString());
+            ErrorViewTextExporter EVTE = new ErrorViewTextExporter(EVS);
+            output = EVTE.getReportText();
         } else {
             // No Messages in Error View Structure
             System.out.println("No messages found on right click.");
         }
+
+        //
+        System.out.println(output); // This the current Error/Warning system text
+        //
 
 
         final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);

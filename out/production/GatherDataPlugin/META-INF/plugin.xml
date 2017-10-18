@@ -33,9 +33,16 @@
 
   <application-components>
     <component>
-      <implementation-class>BackgroundActivityComponent</implementation-class>
+      <implementation-class>GatherData</implementation-class>
     </component>
   </application-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="My Sample Tool Window" anchor="right" factoryClass="ToolWindowComponent"/>
+    <preloadingActivity
+            implementation="MyPreloadingActivity"/>
+  </extensions>
+
 
 
 

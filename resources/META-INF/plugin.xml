@@ -37,6 +37,13 @@
     </component>
   </application-components>
 
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="My Sample Tool Window" anchor="right" factoryClass="ToolWindowComponent"/>
+    <preloadingActivity
+            implementation="MyPreloadingActivity"/>
+  </extensions>
+
+
 
 
 </idea-plugin>
