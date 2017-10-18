@@ -1,50 +1,146 @@
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.codeInsight.hint.EditorFragmentComponent;
+import com.intellij.execution.filters.TextConsoleBuilderFactory;
+import com.intellij.execution.ui.ConsoleView;
+import com.intellij.ide.errorTreeView.ErrorTreeElement;
+import com.intellij.ide.errorTreeView.ErrorTreeElementKind;
+import com.intellij.ide.errorTreeView.ErrorViewStructure;
+import com.intellij.ide.errorTreeView.NewErrorTreeViewPanel;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.editor.SelectionModel;
+import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
+import com.intellij.openapi.editor.actionSystem.EditorActionManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.impl.source.tree.LightTreeUtil;
 import com.intellij.psi.util.PsiTreeUtil;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.MessageView;
+import com.sun.glass.ui.Application;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 /*
-This class defines the action that happens when the sidebar button is clicked.
-Action classes are the basis for how IntelliJ plugin development work, and each
+This class defines the action that happens when the right click menu button is clicked.
+Action classes are the basis for how IntelliJ plugin development works, and each
 action extends the AnAction Interface.
  */
 
 public class GatherData extends AnAction implements ApplicationComponent {
+
     public void initComponent() {
-        System.out.println("I'm alive! (GatherData)");
+        System.out.println("Project opened (GatherData)");
+        // This is for short init code, if you need to execute something
+        // that would take a while, look at the MyPreloadingActivity class
+        // which allows longer code to be run in the background in a separate
+        // thread.
     }
 
     public void disposeComponent() {
-        System.out.println("I'm dead! (GatherData)");
-
+        System.out.println("Project closed (GatherData)");
+        // called when the component closes (when project closes)
     }
-
 
     @Override
     public void actionPerformed(AnActionEvent event) {
-        /* Here is where the main code lies for what happens on a click.
-        The AnActionEvent class gives you all you need about the project. */
-        Project project = event.getProject();
-        PsiClass psiClass = getPsiClassFromContent(event);
-        System.out.println("CLICK");
-        ToolWindow toolWindow = ToolWindowManager.getInstance(project).getToolWindow("Run");
-        System.out.println();
-        // ^ create a debug point here and check out the information, see if you can pinpoint some data to read.
-        // don't worry if you can't understand any of the variables, there are utility classes we need to find
-        // that can extract the information for us.
+        // when gather data is clicked on right click menu in editor...
 
-        // After we've made the Action we need to register the GatherData class in plugin.xml in resources
+        // now, extract Project from AnActionEvent instance
+        final Project project = event.getRequiredData(LangDataKeys.PROJECT);
+        String projectName = project.getName();
+
+        // edit these booleans to only scan for specific types of messages from the current message system
+        boolean lookForErrors =  true;
+        boolean lookForWarning = false;
+        boolean lookForInfo =    false;
+        boolean lookForNote =    false;
+        boolean lookForGeneric = false;
+        Set<ErrorTreeElementKind> setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
+
+        ErrorViewStructure EVS = getErrorViewStructure(project);
+
+        if (EVS.hasMessages(setOfTypesToFind)) {
+            // if the Error View Structure has messages
+            ErrorTreeElement element = EVS.getFirstMessage(ErrorTreeElementKind.ERROR);
+            System.out.println(element.toString());
+        } else {
+            // No Messages in Error View Structure
+            System.out.println("No messages found on right click.");
+        }
+
+
+        final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
+        final Document document = editor.getDocument();
+
+        System.out.println( /**/ document.getText() /**/ ); // how you get a hold of the whole text
+
+        // -- below are notes on how to get specific lines and caret position and stuff --
+//        final SelectionModel selectionModel = editor.getSelectionModel();
+//        final int start = selectionModel.getSelectionStart();
+//        final int end = selectionModel.getSelectionEnd();
+//
+//        final int startLine = document.getLineNumber(start);
+//        final int endLine = document.getLineNumber(end) + 1;
+//        selectionModel.removeSelection();
+//        final EditorFragmentComponent fragment = EditorFragmentComponent.createEditorFragmentComponent(editor, startLine, endLine, false, false);
+
+        // how to make a dialog window show up
+        // /notes ------------------------------------------------------------------------
+
+        // make a dialog box pop up.
+        Messages.showMessageDialog(project, "Description", "Information", Messages.getInformationIcon());
+
+        StringBuilder sourceRootsList = new StringBuilder();
+        VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceRoots();
+        for (VirtualFile file : vFiles) {
+            sourceRootsList.append(file.getUrl()).append("\n");
+        }
+
+        Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList, "Project Properties");
+
+
+        PsiClass psiClass = getPsiClassFromContent(event);
+
+        // Action must be registered in plugin.xml
     }
+
+    @NotNull
+    private Set<ErrorTreeElementKind> getErrorTreeElementKindSet(boolean lookForErrors, boolean lookForWarning, boolean lookForInfo, boolean lookForNote, boolean lookForGeneric) {
+        Set<ErrorTreeElementKind> setOfTypesToFind = new HashSet<ErrorTreeElementKind>();
+        if (lookForErrors) setOfTypesToFind.add(ErrorTreeElementKind.ERROR);
+        if (lookForWarning) setOfTypesToFind.add(ErrorTreeElementKind.WARNING);
+        if (lookForInfo) setOfTypesToFind.add(ErrorTreeElementKind.INFO);
+        if (lookForNote) setOfTypesToFind.add(ErrorTreeElementKind.NOTE);
+        if (lookForGeneric) setOfTypesToFind.add(ErrorTreeElementKind.GENERIC);
+        return setOfTypesToFind;
+    }
+
+    private ErrorViewStructure getErrorViewStructure(Project project) {
+        MessageView messageView = MessageView.SERVICE.getInstance(project);
+        ContentManager contentManager = messageView.getContentManager();
+        Content[] contents = contentManager.getContents();
+        NewErrorTreeViewPanel NETVP = (NewErrorTreeViewPanel) contents[0].getComponent();
+        return NETVP.getErrorViewStructure();
+    }
+
+    public static void info(Logger logger, String msg) {
+            logger.info(msg);
+    }
+
     private PsiClass getPsiClassFromContent(AnActionEvent e) {
         PsiFile psiFile = e.getData(LangDataKeys.PSI_FILE);
         Editor editor = e.getData(PlatformDataKeys.EDITOR);
@@ -73,21 +169,3 @@ public class GatherData extends AnAction implements ApplicationComponent {
     }
 }
 
-//project.getMessageBus().connect(/some disposable/).subscribe(ExecutionManager.EXECUTION_TOPIC, new ExecutionListener() {
-//@Override
-//public void processStarted(@NotNull String executorId, @NotNull ExecutionEnvironment env, @NotNull ProcessHandler handler) {
-//        //here you can add listener to existing 'live' output console
-//
-//        handler.addProcessListener(new ProcessAdapter() {
-//@Override
-//public void onTextAvailable(ProcessEvent event, Key outputType) {
-//        ProcessHandler processHandler = event.getProcessHandler();
-//        if (outputType != ProcessOutputTypes.STDERR) return;
-//            String text = event.getText();
-//        if (text != null && text.toLowerCase().contains("error")) {
-//            new Notification("error-message", processHandler.toString(), text, NotificationType.ERROR).notify(project);
-//        }
-//}
-//        });
-//        }
-//        });
