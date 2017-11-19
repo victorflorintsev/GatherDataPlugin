@@ -1,39 +1,34 @@
-import com.intellij.codeInsight.hint.EditorFragmentComponent;
-import com.intellij.execution.filters.TextConsoleBuilderFactory;
-import com.intellij.execution.ui.ConsoleView;
-import com.intellij.ide.errorTreeView.ErrorTreeElement;
 import com.intellij.ide.errorTreeView.ErrorTreeElementKind;
 import com.intellij.ide.errorTreeView.ErrorViewStructure;
 import com.intellij.ide.errorTreeView.NewErrorTreeViewPanel;
 import com.intellij.ide.errorTreeView.impl.ErrorViewTextExporter;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.editor.SelectionModel;
-import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
-import com.intellij.openapi.editor.actionSystem.EditorActionManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.impl.source.tree.LightTreeUtil;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
-import com.sun.glass.ui.Application;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
+
 
 /*
 This class defines the action that happens when the right click menu button is clicked.
@@ -41,7 +36,16 @@ Action classes are the basis for how IntelliJ plugin development works, and each
 action extends the AnAction Interface.
  */
 
+
+
 public class GatherData extends AnAction implements ApplicationComponent {
+
+    // edit these booleans to only scan for specific types of messages from the current message system
+    private boolean lookForErrors =  true;
+    private boolean lookForWarning = false;
+    private boolean lookForInfo =    false;
+    private boolean lookForNote =    false;
+    private boolean lookForGeneric = false;
 
     public void initComponent() {
         System.out.println("Project opened (GatherData)");
@@ -64,12 +68,11 @@ public class GatherData extends AnAction implements ApplicationComponent {
         final Project project = event.getRequiredData(LangDataKeys.PROJECT);
         String projectName = project.getName();
 
-        // edit these booleans to only scan for specific types of messages from the current message system
-        boolean lookForErrors =  true;
-        boolean lookForWarning = false;
-        boolean lookForInfo =    false;
-        boolean lookForNote =    false;
-        boolean lookForGeneric = false;
+        MyCustomToolWindowFactory factory = new MyCustomToolWindowFactory();
+        ToolWindow window = ToolWindowManager.getInstance(project).registerToolWindow("hi", true, ToolWindowAnchor.RIGHT, project, true);
+        factory.createToolWindowContent(project, window);
+
+
         Set<ErrorTreeElementKind> setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
 
         ErrorViewStructure EVS = getErrorViewStructure(project);
@@ -85,6 +88,9 @@ public class GatherData extends AnAction implements ApplicationComponent {
         //
         System.out.println(output); // This the current Error/Warning system text
         //
+
+        ErrorSystem errorSystem = new ErrorSystem(output);
+        String url = errorSystem.search(); // does an internet search of the first error
 
 
         final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
@@ -119,6 +125,15 @@ public class GatherData extends AnAction implements ApplicationComponent {
 
         PsiClass psiClass = getPsiClassFromContent(event);
 
+
+        //below will print HTML data, save it to a file and open in browser to compare
+        //System.out.println(doc.html());
+
+        //If google search results HTML change the <h3 class="r" to <h3 class="r1"
+        //we need to change below accordingly
+
+
+
         // Action must be registered in plugin.xml
     }
 
@@ -149,18 +164,15 @@ public class GatherData extends AnAction implements ApplicationComponent {
         PsiFile psiFile = e.getData(LangDataKeys.PSI_FILE);
         Editor editor = e.getData(PlatformDataKeys.EDITOR);
         if (psiFile == null || editor == null) {
+            System.out.println("Psi File Returned NULL");
             return null;
         }
 
         // find offset for what is at the caret cursor
         int offset = editor.getCaretModel().getOffset();
         PsiElement elementAt = psiFile.findElementAt(offset);
-        // it would help to know what a PSI tree is,
-        // it's essentially a parser tree of what's
-        // in IntelliJ, has some other cool features
-        // that might be useful to know.
         PsiClass psiClass = PsiTreeUtil.getParentOfType(elementAt, PsiClass.class);
-        // learn to use PsiTreeUtil, in the words of the webinar "very very useful for IJ plugin development"
+
         if (psiClass == null) {
             return null;
         }

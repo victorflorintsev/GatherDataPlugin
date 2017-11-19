@@ -1,12 +1,15 @@
 <idea-plugin>
-  <depends optional="true">
-    com.intellij.modules.java
+  <!--<depends optional="true">-->
+    <!--&lt;!&ndash; com.intellij.modules.java &ndash;&gt;-->
+    <!--PyCharm-->
+  <!--</depends>-->
+  <depends optional="true">com.intellij.modules.python
   </depends>
 
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <id>edu.uh.research.GatherDataPlugin</id>
+  <name>Gather Data</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">University of Houston</vendor>
 
   <description><![CDATA[
       Enter short description for your plugin here.<br>
@@ -43,9 +46,12 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="My Sample Tool Window" anchor="right" factoryClass="ToolWindowComponent"/>
     <preloadingActivity
             implementation="MyPreloadingActivity"/>
+
+    <toolWindow id="Sample Calendar" secondary="true" anchor="right"
+                factoryClass="myToolWindow.MyToolWindowFactory"/>
+
   </extensions>
 
 
