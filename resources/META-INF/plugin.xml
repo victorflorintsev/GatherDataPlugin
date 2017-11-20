@@ -46,7 +46,7 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="My Sample Tool Window" anchor="right" factoryClass="ToolWindowComponent"/>
+    <toolWindow id="My Sample Tool Window" anchor="right" factoryClass="myToolWindow.MyToolWindowFactory"/>
     <preloadingActivity
             implementation="MyPreloadingActivity"/>
   </extensions>

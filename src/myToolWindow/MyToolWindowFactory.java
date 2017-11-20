@@ -1,11 +1,16 @@
 package myToolWindow;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.*;
-import com.intellij.ui.content.*;
+import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.openapi.wm.ToolWindowFactory;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentFactory;
 
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.Calendar;
 
 /**
@@ -16,12 +21,26 @@ import java.util.Calendar;
  */
 public class MyToolWindowFactory implements ToolWindowFactory {
 
+  public class HelpListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+      System.out.println("hi");
+      try {
+        Desktop.getDesktop().browse(new URL("http://www.google.com").toURI());
+      } catch (Exception e2) {
+        e2.printStackTrace(); }
+
+    }
+  }
+
   private JButton refreshToolWindowButton;
   private JButton hideToolWindowButton;
   private JLabel currentDate;
   private JLabel currentTime;
   private JLabel timeZone;
   private JPanel myToolWindowContent;
+  private JButton helpButton;
   private ToolWindow myToolWindow;
 
 
@@ -40,6 +59,7 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
   // Create the tool window content.
   public void createToolWindowContent(Project project, ToolWindow toolWindow) {
+    helpButton.addActionListener(new HelpListener());
     myToolWindow = toolWindow;
     this.currentDateTime();
     ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();

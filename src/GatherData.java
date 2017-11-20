@@ -14,9 +14,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.wm.ToolWindow;
-import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -67,11 +64,6 @@ public class GatherData extends AnAction implements ApplicationComponent {
         // now, extract Project from AnActionEvent instance
         final Project project = event.getRequiredData(LangDataKeys.PROJECT);
         String projectName = project.getName();
-
-        MyCustomToolWindowFactory factory = new MyCustomToolWindowFactory();
-        ToolWindow window = ToolWindowManager.getInstance(project).registerToolWindow("hi", true, ToolWindowAnchor.RIGHT, project, true);
-        factory.createToolWindowContent(project, window);
-
 
         Set<ErrorTreeElementKind> setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
 

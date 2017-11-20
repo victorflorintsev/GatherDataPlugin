@@ -46,12 +46,9 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="My Sample Tool Window" anchor="right" factoryClass="myToolWindow.MyToolWindowFactory"/>
     <preloadingActivity
             implementation="MyPreloadingActivity"/>
-
-    <toolWindow id="Sample Calendar" secondary="true" anchor="right"
-                factoryClass="myToolWindow.MyToolWindowFactory"/>
-
   </extensions>
 
 
