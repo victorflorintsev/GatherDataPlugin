@@ -20,6 +20,7 @@ import java.util.Calendar;
  * Time: 2:09:00 PM
  */
 public class MyToolWindowFactory implements ToolWindowFactory {
+  public static String URL = "http://www.roof.com";
 
   public class HelpListener implements ActionListener {
 
@@ -27,7 +28,8 @@ public class MyToolWindowFactory implements ToolWindowFactory {
     public void actionPerformed(ActionEvent e) {
       System.out.println("hi");
       try {
-        Desktop.getDesktop().browse(new URL("http://www.google.com").toURI());
+        String url = URL;
+        Desktop.getDesktop().browse(new URL(url).toURI());
       } catch (Exception e2) {
         e2.printStackTrace(); }
 

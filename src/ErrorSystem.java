@@ -52,12 +52,17 @@ public class ErrorSystem {
 
         String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+num;
         //without proper User-Agent, we will get 403 error
+        String url = "http://www.google.com"; // default
+
         try {
             org.jsoup.nodes.Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
             Elements results = doc.select("h3.r > a");
 
             for (Element result : results) {
                 String linkHref = result.attr("href");
+                if (url.equals("http://www.google.com")) {
+                    url = linkHref.substring(7, linkHref.indexOf("&"));
+                }
                 String linkText = result.text();
                 System.out.println("Text::" + linkText + ", URL::" + linkHref.substring(6, linkHref.indexOf("&")));
             }
@@ -65,7 +70,6 @@ public class ErrorSystem {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        String url = "http://www.google.com";
         return url;
     }
 

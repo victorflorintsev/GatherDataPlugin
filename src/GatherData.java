@@ -21,6 +21,7 @@ import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
+import myToolWindow.MyToolWindowFactory;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -83,7 +84,7 @@ public class GatherData extends AnAction implements ApplicationComponent {
 
         ErrorSystem errorSystem = new ErrorSystem(output);
         String url = errorSystem.search(); // does an internet search of the first error
-
+        MyToolWindowFactory.URL = url;
 
         final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
         final Document document = editor.getDocument();
