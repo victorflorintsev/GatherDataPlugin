@@ -37,6 +37,9 @@ action extends the AnAction Interface.
 
 
 public class GatherData extends AnAction implements ApplicationComponent {
+    enum IDEType {
+        INTELLIJ, PYCHARM
+    }
 
     // edit these booleans to only scan for specific types of messages from the current message system
     private boolean lookForErrors  = true;
@@ -67,26 +70,35 @@ public class GatherData extends AnAction implements ApplicationComponent {
         final Project project = event.getRequiredData(LangDataKeys.PROJECT);
         String projectName = project.getName();
 
-        Set<ErrorTreeElementKind> setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
-        // if (setOfTypesToFind == null) System.out.println("This is python");
-        // if run on python it doesn't even get to the line above, just exits.
-        ErrorViewStructure EVS = getErrorViewStructure(project);
+        Set<ErrorTreeElementKind> setOfTypesToFind;
+        ErrorViewStructure EVS;
         String output = "";
-        if (EVS.hasMessages(setOfTypesToFind)) {
-            ErrorViewTextExporter EVTE = new ErrorViewTextExporter(EVS);
-            output = EVTE.getReportText();
-        } else {
-            // No Messages in Error View Structure
-            System.out.println("No messages found on right click.");
+        IDEType ideType;
+
+        try {
+            setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
+            EVS = getErrorViewStructure(project);
+            if (EVS.hasMessages(setOfTypesToFind)) {
+                ErrorViewTextExporter EVTE = new ErrorViewTextExporter(EVS);
+                output = EVTE.getReportText();
+            } else {
+                // No Messages in Error View Structure
+                System.out.println("No messages found on right click.");
+            }
+            ideType = IDEType.INTELLIJ;
+        } catch (Exception e) {
+            System.out.println("This is python");
+            ideType = IDEType.PYCHARM;
         }
+
 
         //
         System.out.println(output); // This the current Error/Warning system text
         //
 
-        ErrorSystem errorSystem = new ErrorSystem(output);
+        ErrorSystem errorSystem = new ErrorSystem(output, ideType);
         String url = errorSystem.search(); // does an internet search of the first error
-        MyToolWindowFactory.URL = url;
+        MyToolWindowFactory.URL = url; // sets the URL of the help button
 
         final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
         final Document document = editor.getDocument();
