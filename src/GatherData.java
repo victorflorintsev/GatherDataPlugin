@@ -39,10 +39,10 @@ action extends the AnAction Interface.
 public class GatherData extends AnAction implements ApplicationComponent {
 
     // edit these booleans to only scan for specific types of messages from the current message system
-    private boolean lookForErrors =  true;
+    private boolean lookForErrors  = true;
     private boolean lookForWarning = false;
-    private boolean lookForInfo =    false;
-    private boolean lookForNote =    false;
+    private boolean lookForInfo    = false;
+    private boolean lookForNote    = false;
     private boolean lookForGeneric = false;
 
     public void initComponent() {
@@ -60,6 +60,7 @@ public class GatherData extends AnAction implements ApplicationComponent {
 
     @Override
     public void actionPerformed(AnActionEvent event) {
+        System.out.println("action was performed");
         // when gather data is clicked on right click menu in editor...
 
         // now, extract Project from AnActionEvent instance
@@ -67,7 +68,8 @@ public class GatherData extends AnAction implements ApplicationComponent {
         String projectName = project.getName();
 
         Set<ErrorTreeElementKind> setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
-
+        // if (setOfTypesToFind == null) System.out.println("This is python");
+        // if run on python it doesn't even get to the line above, just exits.
         ErrorViewStructure EVS = getErrorViewStructure(project);
         String output = "";
         if (EVS.hasMessages(setOfTypesToFind)) {
