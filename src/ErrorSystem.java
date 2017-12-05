@@ -7,9 +7,9 @@ import java.util.Vector;
 
 
 public class ErrorSystem {
-    public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
+    public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search"; // delete this
 
-    public String text = "";
+    private String text = "";
     public Vector<VicError> errorVector = new Vector<VicError>();
 
     private GatherData.IDEType ideType;
@@ -83,6 +83,15 @@ public class ErrorSystem {
             System.out.println(e.getMessage());
         }
         return url;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getTerms() {
+        if (!errorVector.isEmpty()) return errorVector.firstElement().whatsWrong;
+        return "";
     }
 
     public class VicError {

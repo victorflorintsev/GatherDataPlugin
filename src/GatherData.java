@@ -8,12 +8,8 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ProjectRootManager;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -21,7 +17,6 @@ import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
-import myToolWindow.MyToolWindowFactory;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -63,18 +58,73 @@ public class GatherData extends AnAction implements ApplicationComponent {
 
     @Override
     public void actionPerformed(AnActionEvent event) {
-        System.out.println("action was performed");
         // when gather data is clicked on right click menu in editor...
 
         // now, extract Project from AnActionEvent instance
         final Project project = event.getRequiredData(LangDataKeys.PROJECT);
         String projectName = project.getName();
 
-        Set<ErrorTreeElementKind> setOfTypesToFind;
-        ErrorViewStructure EVS;
+        // Process Errors
+        ErrorSystem errorSystem = getErrorSystem(project); // uses my ErrorSystem class I made to deal with errors
+        // the output text is located in errorSystem.getText like so...
+        // System.out.println(errorSystem.getText()); // This the current Error/Warning system text
+        CaretSystem caretSystem = new CaretSystem(project);
+
+
+        SearchSystem searchSystem = new SearchSystem();
+        searchSystem.addTerms(errorSystem.getTerms());
+        searchSystem.addTerms(caretSystem.getTerms());
+
+        searchSystem.updateHelpButton();
+
+        //MyToolWindowFactory.URL = errorSystem.search(); // sets the URL of the help button
+        // this is kind of wonky, lets create a search class
+
+        // final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
+        // final Document document = editor.getDocument();
+        // System.out.println( /**/ document.getText() /**/ ); // how you get a hold of the whole text
+
+        // -- below are notes on how to get specific lines and caret position and stuff --
+//        final SelectionModel selectionModel = editor.getSelectionModel();
+//        final int start = selectionModel.getSelectionStart();
+//        final int end = selectionModel.getSelectionEnd();
+//
+//        final int startLine = document.getLineNumber(start);
+//        final int endLine = document.getLineNumber(end) + 1;
+//        selectionModel.removeSelection();
+//        final EditorFragmentComponent fragment = EditorFragmentComponent.createEditorFragmentComponent(editor, startLine, endLine, false, false);
+
+        // how to make a dialog window show up
+        // /notes ------------------------------------------------------------------------
+
+        // make a dialog box pop up.
+//        Messages.showMessageDialog(project, "Description", "Information", Messages.getInformationIcon());
+//
+//        StringBuilder sourceRootsList = new StringBuilder();
+//        VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceRoots();
+//        for (VirtualFile file : vFiles) {
+//            sourceRootsList.append(file.getUrl()).append("\n");
+//        }
+//
+//        Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList, "Project Properties");
+//
+//
+//        PsiClass psiClass = getPsiClassFromContent(event);
+
+
+        //below will print HTML data, save it to a file and open in browser to compare
+        //System.out.println(doc.html());
+
+
+        // Action must be registered in plugin.xml
+    }
+
+    private ErrorSystem getErrorSystem(Project project) {
         String output = "";
         IDEType ideType;
 
+        Set<ErrorTreeElementKind> setOfTypesToFind;
+        ErrorViewStructure EVS;
         try {
             setOfTypesToFind = getErrorTreeElementKindSet(lookForErrors, lookForWarning, lookForInfo, lookForNote, lookForGeneric);
             EVS = getErrorViewStructure(project);
@@ -91,57 +141,8 @@ public class GatherData extends AnAction implements ApplicationComponent {
             ideType = IDEType.PYCHARM;
         }
 
-
-        //
-        System.out.println(output); // This the current Error/Warning system text
-        //
-
         ErrorSystem errorSystem = new ErrorSystem(output, ideType);
-        String url = errorSystem.search(); // does an internet search of the first error
-        MyToolWindowFactory.URL = url; // sets the URL of the help button
-
-        final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
-        final Document document = editor.getDocument();
-
-        System.out.println( /**/ document.getText() /**/ ); // how you get a hold of the whole text
-
-        // -- below are notes on how to get specific lines and caret position and stuff --
-//        final SelectionModel selectionModel = editor.getSelectionModel();
-//        final int start = selectionModel.getSelectionStart();
-//        final int end = selectionModel.getSelectionEnd();
-//
-//        final int startLine = document.getLineNumber(start);
-//        final int endLine = document.getLineNumber(end) + 1;
-//        selectionModel.removeSelection();
-//        final EditorFragmentComponent fragment = EditorFragmentComponent.createEditorFragmentComponent(editor, startLine, endLine, false, false);
-
-        // how to make a dialog window show up
-        // /notes ------------------------------------------------------------------------
-
-        // make a dialog box pop up.
-        Messages.showMessageDialog(project, "Description", "Information", Messages.getInformationIcon());
-
-        StringBuilder sourceRootsList = new StringBuilder();
-        VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceRoots();
-        for (VirtualFile file : vFiles) {
-            sourceRootsList.append(file.getUrl()).append("\n");
-        }
-
-        Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList, "Project Properties");
-
-
-        PsiClass psiClass = getPsiClassFromContent(event);
-
-
-        //below will print HTML data, save it to a file and open in browser to compare
-        //System.out.println(doc.html());
-
-        //If google search results HTML change the <h3 class="r" to <h3 class="r1"
-        //we need to change below accordingly
-
-
-
-        // Action must be registered in plugin.xml
+        return errorSystem;
     }
 
     @NotNull
