@@ -73,7 +73,7 @@ public class GatherData extends AnAction implements ApplicationComponent {
 
         SearchSystem searchSystem = new SearchSystem();
         searchSystem.addTerms(errorSystem.getTerms());
-        searchSystem.addTerms(caretSystem.getTerms());
+        searchSystem.addTerms(caretSystem.getTerms(event));
 
         searchSystem.updateHelpButton();
 
