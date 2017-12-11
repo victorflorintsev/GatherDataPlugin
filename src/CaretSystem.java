@@ -36,4 +36,13 @@ public class CaretSystem {
         return document.getText(tr);
     }
 
+    // this is inefficient, ToDo: fix the fact that the cascade below gets called twice during runtime
+    public int getLineNumber(AnActionEvent event) {
+        final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
+        final Document document = editor.getDocument();
+        final SelectionModel selectionModel = editor.getSelectionModel();
+        final int start = selectionModel.getSelectionStart();
+        int lineNumber = document.getLineNumber(start);
+        return lineNumber;
+    }
 }

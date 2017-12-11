@@ -89,8 +89,18 @@ public class ErrorSystem {
         return text;
     }
 
-    public String getTerms() {
-        if (!errorVector.isEmpty()) return errorVector.firstElement().whatsWrong;
+    public String getTerms(int lineNumber, int range) {
+        if (!errorVector.isEmpty()) {
+            String out = "";
+            for (VicError e:errorVector) {
+                if (e.lineNumber > lineNumber - range && e.lineNumber < lineNumber + range) {
+                    if (!out.contains(e.whatsWrong)) {
+                        out += e.whatsWrong + " ";
+                    }
+                } // adds all in-range errors to out string if they contain unique information
+            }
+            return out;
+        }
         return "";
     }
 

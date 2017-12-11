@@ -60,7 +60,7 @@ public class GatherData extends AnAction implements ApplicationComponent {
     public void actionPerformed(AnActionEvent event) {
         // when gather data is clicked on right click menu in editor...
 
-        // now, extract Project from AnActionEvent instance
+        // extract Project from AnActionEvent instance
         final Project project = event.getRequiredData(LangDataKeys.PROJECT);
         String projectName = project.getName();
 
@@ -70,10 +70,13 @@ public class GatherData extends AnAction implements ApplicationComponent {
         // System.out.println(errorSystem.getText()); // This the current Error/Warning system text
         CaretSystem caretSystem = new CaretSystem(project);
 
+        int lineNumber = caretSystem.getLineNumber(event);
+        int range = 2; // will search the errors around the above line number
 
         SearchSystem searchSystem = new SearchSystem();
-        searchSystem.addTerms(errorSystem.getTerms());
+        searchSystem.addTerms(errorSystem.getTerms(lineNumber, range));
         searchSystem.addTerms(caretSystem.getTerms(event));
+        // ToDo: Integrate line number for ErrorSystem with CaretSystem
 
         searchSystem.updateHelpButton();
 

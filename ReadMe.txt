@@ -20,9 +20,9 @@ About The Code:
     first from Stack Overflow that would have shown up on google. It is possible to look at multiple results on google and
     analyze them, that code is commented out in the updateHelpButton() method and can be added in later.
 
-    - The way we have it now: ErrorSystem returns first error, adds it to SearchSystem's query, then CaratSystem returns the
-    line the cursor position is on into the SearchSystem query. Then SearchSystem executes the query.
-    *ToDo: make ErrorSystem return the error of the line the cursor is on.
+    - ErrorSystem.getTerms(lineNumber, range) now responds to the current line number of the carat and range around the carat
+    that is specified to look around. If there are multiple errors with the same contents it will trim it so that only one of
+    them is added to the search terms to prevent overloading the search engine.
 
 What's Possible:
 
@@ -33,4 +33,6 @@ We have:
     - Every Error or Warning in the Error System, in order, line number and error text parsed out to separate variables.
 (Info, Note, Generic are also available in the error system, not sure what those are yet)
 
-ReadMe Updated: 12/5
+ReadMe Updated: 12/11
+
+ToDo: make the process automatic through a process scheduler.
