@@ -17,10 +17,13 @@ import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
+import com.intellij.util.concurrency.AppExecutorUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 /*
@@ -45,6 +48,15 @@ public class GatherData extends AnAction implements ApplicationComponent {
 
     public void initComponent() {
         System.out.println("Project opened (GatherData)");
+
+        AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("hi");
+                //System.out.println("scheduleAtFixedRate:    " + new Date());
+            }
+        }, 1, 3L , SECONDS);
+
         // This is for short init code, if you need to execute something
         // that would take a while, look at the MyPreloadingActivity class
         // which allows longer code to be run in the background in a separate
