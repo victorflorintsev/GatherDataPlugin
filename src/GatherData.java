@@ -49,10 +49,20 @@ public class GatherData extends AnAction implements ApplicationComponent {
     public void initComponent() {
         System.out.println("Project opened (GatherData)");
 
+        // This is the scheduled task:
+
         AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
             @Override
             public void run() {
                 System.out.println("hi");
+                double k = 0;
+                for (int i = 0; i < 90000; i++) {
+                    k = k+Math.random();
+                    for (int j = 0; j < 10000; j++) {
+                        k = Math.pow(k,0.5 + Math.random());
+                    }
+                }
+                System.out.println("done: "+ k);
                 //System.out.println("scheduleAtFixedRate:    " + new Date());
             }
         }, 1, 3L , SECONDS);

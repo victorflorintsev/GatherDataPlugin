@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="907a045c-e36f-4623-8cd2-e04e2fd9f272" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem$VicError.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem$VicError.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" />
       <change beforePath="$PROJECT_DIR$/src/GatherData.java" afterPath="$PROJECT_DIR$/src/GatherData.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,11 +24,11 @@
       <file leaf-file-name="GatherData.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GatherData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+            <state relative-caret-position="448">
+              <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7009#7031#0" expanded="true" />
+                <element signature="e#7374#7396#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -400,7 +397,7 @@
       <workItem from="1513016929976" duration="2265000" />
       <workItem from="1513283697276" duration="202000" />
       <workItem from="1514334716304" duration="325000" />
-      <workItem from="1514335226757" duration="616000" />
+      <workItem from="1514335226757" duration="2454000" />
     </task>
     <task id="LOCAL-00001" summary="oops, mislabelled">
       <created>1505938741097</created>
@@ -514,14 +511,22 @@
       <option name="project" value="LOCAL" />
       <updated>1513019139202</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Now schedules task that runs every second without slowing down executable noticeably">
+      <created>1514335949151</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1514335949151</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94175000" />
+    <option name="totallyTimeSpent" value="96013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-18" y="-18" width="3876" height="2076" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="StackInTheFlow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -533,7 +538,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39609236" sideWeight="0.15776698" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.294849" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36764705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36764705" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32149202" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -544,7 +549,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29662523" sideWeight="0.842233" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29647058" sideWeight="0.842233" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -606,7 +611,8 @@
     <MESSAGE value="Updated ReadMe" />
     <MESSAGE value="Updated CaratSystem - now returns the line the user's cursor is on in String format.&#10;&#10;Updated ReadMe" />
     <MESSAGE value="Updated ErrorSystem, getTerms now takes lineNumber and range as well as trims and duplicates that may arise.&#10;&#10;Updated ReadMe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ErrorSystem, getTerms now takes lineNumber and range as well as trims and duplicates that may arise.&#10;&#10;Updated ReadMe" />
+    <MESSAGE value="Now schedules task that runs every second without slowing down executable noticeably" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now schedules task that runs every second without slowing down executable noticeably" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -670,7 +676,7 @@
           <caret line="43" column="35" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="43" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -689,7 +695,7 @@
           <caret line="149" column="68" lean-forward="false" selection-start-line="149" selection-start-column="48" selection-end-line="149" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -726,7 +732,7 @@
           <caret line="149" column="68" lean-forward="false" selection-start-line="149" selection-start-column="48" selection-end-line="149" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -763,7 +769,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -805,7 +811,7 @@
           <caret line="86" column="38" lean-forward="false" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -847,7 +853,7 @@
           <caret line="86" column="38" lean-forward="false" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -896,7 +902,7 @@
           <caret line="71" column="132" lean-forward="true" selection-start-line="71" selection-start-column="132" selection-end-line="71" selection-end-column="132" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1031,11 +1037,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GatherData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+        <state relative-caret-position="448">
+          <caret line="61" column="42" lean-forward="false" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7009#7031#0" expanded="true" />
+            <element signature="e#7374#7396#0" expanded="true" />
           </folding>
         </state>
       </provider>
