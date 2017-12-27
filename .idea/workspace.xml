@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="907a045c-e36f-4623-8cd2-e04e2fd9f272" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/GatherData.java" afterPath="$PROJECT_DIR$/src/GatherData.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -397,7 +396,7 @@
       <workItem from="1513016929976" duration="2265000" />
       <workItem from="1513283697276" duration="202000" />
       <workItem from="1514334716304" duration="325000" />
-      <workItem from="1514335226757" duration="2454000" />
+      <workItem from="1514335226757" duration="2740000" />
     </task>
     <task id="LOCAL-00001" summary="oops, mislabelled">
       <created>1505938741097</created>
@@ -518,11 +517,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514335949151</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="scheduled tasks run in the background, this version shows a very intense task being run on the scheduler, yet the IDE is not affected. The scheduler lets the task run, the delay starts after it is finished.">
+      <created>1514337985973</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1514337985973</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96013000" />
+    <option name="totallyTimeSpent" value="96299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-18" y="-18" width="3876" height="2076" extended-state="6" />
@@ -612,7 +618,8 @@
     <MESSAGE value="Updated CaratSystem - now returns the line the user's cursor is on in String format.&#10;&#10;Updated ReadMe" />
     <MESSAGE value="Updated ErrorSystem, getTerms now takes lineNumber and range as well as trims and duplicates that may arise.&#10;&#10;Updated ReadMe" />
     <MESSAGE value="Now schedules task that runs every second without slowing down executable noticeably" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now schedules task that runs every second without slowing down executable noticeably" />
+    <MESSAGE value="scheduled tasks run in the background, this version shows a very intense task being run on the scheduler, yet the IDE is not affected. The scheduler lets the task run, the delay starts after it is finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="scheduled tasks run in the background, this version shows a very intense task being run on the scheduler, yet the IDE is not affected. The scheduler lets the task run, the delay starts after it is finished." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
