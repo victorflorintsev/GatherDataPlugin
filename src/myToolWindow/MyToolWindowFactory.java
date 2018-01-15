@@ -1,17 +1,25 @@
 package myToolWindow;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.playback.commands.ActionCommand;
+import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowFactory;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
+import com.intellij.util.concurrency.EdtExecutorService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
 import java.net.URL;
 import java.util.Calendar;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,7 +34,27 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-      System.out.println("hi");
+        //AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay // bad thread, doesn't work
+        EdtExecutorService.getScheduledExecutorInstance().scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println("Scheduled Task Running...");
+                    AnAction action = ActionManager.getInstance().getAction("RightClickButton");
+                    InputEvent inputEvent = ActionCommand.getInputEvent("RightClickButton");
+                    ActionCallback callback = ActionManager.getInstance().tryToExecute(action, inputEvent, null, null, true);
+                    // System.out.println(callback.toString());
+                    System.out.println("finished attempt to run GatherData");
+                }
+                catch (Exception e) {
+                    System.out.println("exception in scheduled task!");
+                    e.printStackTrace();
+
+                    throw new RuntimeException(e);
+                }
+            }
+        }, 10, 5L , SECONDS);
+
       try {
         String url = URL;
         Desktop.getDesktop().browse(new URL(url).toURI());
@@ -40,7 +68,6 @@ public class MyToolWindowFactory implements ToolWindowFactory {
   private JButton hideToolWindowButton;
   private JLabel currentDate;
   private JLabel currentTime;
-  private JLabel timeZone;
   private JPanel myToolWindowContent;
   private JButton helpButton;
   private ToolWindow myToolWindow;
@@ -68,6 +95,17 @@ public class MyToolWindowFactory implements ToolWindowFactory {
     Content content = contentFactory.createContent(myToolWindowContent, "", false);
     toolWindow.getContentManager().addContent(content);
 
+
+//    AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("Scheduled Task Running...");
+//                AnAction action = ActionManager.getInstance().getAction("RightClickButton");
+//                InputEvent inputEvent = ActionCommand.getInputEvent("RightClickButton");
+//                ActionCallback callback = ActionManager.getInstance().tryToExecute(action, inputEvent, null, null, true);
+//                System.out.println("finished attempt to run GatherData");
+//            }
+//        }, 15, 3L , SECONDS);
   }
 
   public void currentDateTime() {
@@ -90,9 +128,6 @@ public class MyToolWindowFactory implements ToolWindowFactory {
     long gmt_Offset = instance.get(Calendar.ZONE_OFFSET); // offset from GMT in milliseconds
     String str_gmt_Offset = String.valueOf(gmt_Offset / 3600000);
     str_gmt_Offset = (gmt_Offset > 0) ? "GMT + " + str_gmt_Offset : "GMT - " + str_gmt_Offset;
-    timeZone.setText(str_gmt_Offset);
-    timeZone.setIcon(new ImageIcon(getClass().getResource("/myToolWindow/Time-zone-icon.png")));
-
 
   }
 

@@ -9,7 +9,7 @@ public class SearchSystem {
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
 
     public void addTerms(String terms) {
-        toSearch += " " + terms;
+        if (!terms.equals("")) toSearch += " " + terms;
     }
     public void updateHelpButton() {
         String searchTerm = toSearch + " site:stackoverflow.com";

@@ -1,8 +1,10 @@
+
 import com.intellij.ide.errorTreeView.ErrorTreeElementKind;
 import com.intellij.ide.errorTreeView.ErrorViewStructure;
 import com.intellij.ide.errorTreeView.NewErrorTreeViewPanel;
 import com.intellij.ide.errorTreeView.impl.ErrorViewTextExporter;
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnAction.TransparentUpdate;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -17,13 +19,10 @@ import com.intellij.psi.util.PsiTreeUtil;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
-import com.intellij.util.concurrency.AppExecutorUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 /*
@@ -34,7 +33,7 @@ action extends the AnAction Interface.
 
 
 
-public class GatherData extends AnAction implements ApplicationComponent {
+public class GatherData extends AnAction implements TransparentUpdate, ApplicationComponent  {
     enum IDEType {
         INTELLIJ, PYCHARM
     }
@@ -46,31 +45,20 @@ public class GatherData extends AnAction implements ApplicationComponent {
     private boolean lookForNote    = false;
     private boolean lookForGeneric = false;
 
+    private Project project;
+    private String projectName = "";
+
+
     public void initComponent() {
         System.out.println("Project opened (GatherData)");
 
-        // This is the scheduled task:
+        // scheduled task:
 
-        AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("hi");
-                double k = 0;
-                for (int i = 0; i < 90000; i++) {
-                    k = k+Math.random();
-                    for (int j = 0; j < 10000; j++) {
-                        k = Math.pow(k,0.5 + Math.random());
-                    }
-                }
-                System.out.println("done: "+ k);
-                //System.out.println("scheduleAtFixedRate:    " + new Date());
-            }
-        }, 1, 3L , SECONDS);
 
         // This is for short init code, if you need to execute something
         // that would take a while, look at the MyPreloadingActivity class
         // which allows longer code to be run in the background in a separate
-        // thread.
+        // thread. On init, a process is scheduled to run every second
     }
 
     public void disposeComponent() {
@@ -78,13 +66,17 @@ public class GatherData extends AnAction implements ApplicationComponent {
         // called when the component closes (when project closes)
     }
 
+    boolean start = false;
+
     @Override
     public void actionPerformed(AnActionEvent event) {
+
+        System.out.println("Action Performed");
         // when gather data is clicked on right click menu in editor...
 
         // extract Project from AnActionEvent instance
-        final Project project = event.getRequiredData(LangDataKeys.PROJECT);
-        String projectName = project.getName();
+        project = event.getRequiredData(LangDataKeys.PROJECT);
+        projectName = project.getName();
 
         // Process Errors
         ErrorSystem errorSystem = getErrorSystem(project); // uses my ErrorSystem class I made to deal with errors
@@ -92,15 +84,17 @@ public class GatherData extends AnAction implements ApplicationComponent {
         // System.out.println(errorSystem.getText()); // This the current Error/Warning system text
         CaretSystem caretSystem = new CaretSystem(project);
 
-        int lineNumber = caretSystem.getLineNumber(event);
+        int lineNumber = caretSystem.getLineNumber(event); // default 0
+
         int range = 2; // will search the errors around the above line number
 
         SearchSystem searchSystem = new SearchSystem();
         searchSystem.addTerms(errorSystem.getTerms(lineNumber, range));
         searchSystem.addTerms(caretSystem.getTerms(event));
-        // ToDo: Integrate line number for ErrorSystem with CaretSystem
 
         searchSystem.updateHelpButton();
+
+        System.out.println("Action Finished");
 
         //MyToolWindowFactory.URL = errorSystem.search(); // sets the URL of the help button
         // this is kind of wonky, lets create a search class
@@ -162,7 +156,7 @@ public class GatherData extends AnAction implements ApplicationComponent {
             }
             ideType = IDEType.INTELLIJ;
         } catch (Exception e) {
-            System.out.println("This is python");
+            System.out.println("No errors found: might be python?");
             ideType = IDEType.PYCHARM;
         }
 

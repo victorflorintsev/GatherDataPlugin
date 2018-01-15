@@ -28,6 +28,20 @@ public class MyPreloadingActivity extends PreloadingActivity {
     being run without a problem.
  */
         System.out.println("preloading working");
+
+//        AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("Scheduled Task Running...");
+//                AnAction action = ActionManager.getInstance().getAction("RightClickButton");
+//                InputEvent inputEvent = ActionCommand.getInputEvent("RightClickButton");
+//                ActionCallback callback = ActionManager.getInstance().tryToExecute(action, inputEvent, null, null, true);
+//                System.out.println("finished attempt to run GatherData");
+//            }
+//        }, 15, 3L , SECONDS);
+
+
+
 //        LOG.info("Preloading plugin-data");
 //
 //        final long startTime = System.currentTimeMillis();
@@ -43,7 +57,7 @@ public class MyPreloadingActivity extends PreloadingActivity {
 
     private void sortLinearly(int i) {
         // sorts i numbers
-        //bubble sort to take up time, it's inefficient on purpose to demonstrate the seperate thread
+        // bubble sort to take up time, it's inefficient on purpose to demonstrate the separate thread
         int[] list = new int[i];
         int temp;
         for (int data: list) {

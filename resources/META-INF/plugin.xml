@@ -35,6 +35,11 @@
     <action class="GatherData" id="RightClickButton" text="Gather Data">
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
+    <action id="moveCaret" class="moveCaretAction" text="movedCaret"
+            description="anytime caret is moved, added or removed">
+      <add-to-group group-id="EditorActions" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl H"/>
+    </action>
   </actions>
 
   <application-components>

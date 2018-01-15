@@ -13,13 +13,18 @@ public class CaretSystem {
     }
 
     public String getTerms(AnActionEvent event) {
-        final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
-        final Document document = editor.getDocument();
-        final SelectionModel selectionModel = editor.getSelectionModel();
-        final int start = selectionModel.getSelectionStart();
-        int lineNumber = document.getLineNumber(start);
-        String line = getLine(document, lineNumber);
-
+        Editor editor = null;
+        String line = "";
+        try {
+            editor = event.getData(LangDataKeys.EDITOR);
+        } catch (Exception e) {e.printStackTrace();}
+        if (editor != null) {
+            final Document document = editor.getDocument();
+            final SelectionModel selectionModel = editor.getSelectionModel();
+            final int start = selectionModel.getSelectionStart();
+            int lineNumber = document.getLineNumber(start);
+            line = getLine(document, lineNumber);
+        }
         return line;
     }
 
@@ -38,11 +43,18 @@ public class CaretSystem {
 
     // this is inefficient, ToDo: fix the fact that the cascade below gets called twice during runtime
     public int getLineNumber(AnActionEvent event) {
-        final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
-        final Document document = editor.getDocument();
-        final SelectionModel selectionModel = editor.getSelectionModel();
-        final int start = selectionModel.getSelectionStart();
-        int lineNumber = document.getLineNumber(start);
-        return lineNumber;
+        Editor editor = null;
+        try {
+            editor = event.getData(LangDataKeys.EDITOR);
+        } catch (Exception e) {e.printStackTrace();}
+        if (editor != null) {
+            final Document document = editor.getDocument();
+            final SelectionModel selectionModel = editor.getSelectionModel();
+            final int start = selectionModel.getSelectionStart();
+            int lineNumber = document.getLineNumber(start);
+            System.out.println("Line number: "+lineNumber);
+            return lineNumber;
+        }
+        else return 0;
     }
 }
