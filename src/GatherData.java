@@ -66,22 +66,21 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
         // called when the component closes (when project closes)
     }
 
-    boolean start = false;
-
     @Override
     public void actionPerformed(AnActionEvent event) {
 
-        System.out.println("Action Performed");
         // when gather data is clicked on right click menu in editor...
+        // also when gather data is called automatically every 5 seconds, changed in MyToolWindowFactory
 
         // extract Project from AnActionEvent instance
         project = event.getRequiredData(LangDataKeys.PROJECT);
         projectName = project.getName();
 
         // Process Errors
-        ErrorSystem errorSystem = getErrorSystem(project); // uses my ErrorSystem class I made to deal with errors
-        // the output text is located in errorSystem.getText like so...
+        ErrorSystem errorSystem = getErrorSystem(project); // uses ErrorSystem class to deal with errors
+        // the output text of the error module is located in errorSystem.getText
         // System.out.println(errorSystem.getText()); // This the current Error/Warning system text
+
         CaretSystem caretSystem = new CaretSystem(project);
 
         int lineNumber = caretSystem.getLineNumber(event); // default 0
@@ -94,7 +93,6 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
 
         searchSystem.updateHelpButton();
 
-        System.out.println("Action Finished");
 
         //MyToolWindowFactory.URL = errorSystem.search(); // sets the URL of the help button
         // this is kind of wonky, lets create a search class

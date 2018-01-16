@@ -1,64 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="myToolWindow.MyToolWindowFactory">
-  <grid id="27dc6" binding="myToolWindowContent" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="0" right="0"/>
+  <grid id="27dc6" binding="myToolWindowContent" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="657" height="400"/>
+      <xy x="20" y="20" width="779" height="400"/>
     </constraints>
     <properties/>
-    <border type="none"/>
+    <border type="none">
+      <title-color color="-16777216"/>
+    </border>
     <children>
-      <component id="9aa3f" class="javax.swing.JLabel" binding="currentDate">
+      <component id="5fceb" class="javax.swing.JButton" binding="startButton">
         <constraints>
-          <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="Date"/>
-        </properties>
-      </component>
-      <component id="f02af" class="javax.swing.JLabel" binding="currentTime">
-        <constraints>
-          <grid row="0" column="3" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Time"/>
-        </properties>
-      </component>
-      <component id="5fceb" class="javax.swing.JButton" binding="refreshToolWindowButton">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Refresh"/>
+          <text value="Start"/>
         </properties>
       </component>
       <component id="3edc1" class="javax.swing.JButton" binding="hideToolWindowButton">
         <constraints>
-          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
           <text value="Hide"/>
         </properties>
       </component>
-      <hspacer id="8bf9c">
+      <component id="9c77a" class="javax.swing.JButton" binding="openButton">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
-      <hspacer id="26841">
-        <constraints>
-          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
-      <component id="9c77a" class="javax.swing.JButton" binding="helpButton">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
           <hideActionText value="true"/>
           <text value="Help"/>
           <toolTipText value="Opens a URL we thought would be helpful given your errors"/>
         </properties>
+      </component>
+      <component id="c4260" class="javax.swing.JList" binding="websiteList">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <gridbag weightx="2.0" weighty="1.0"/>
+        </constraints>
+        <properties>
+          <toolTipText value="Websites related to your \ncaret position"/>
+        </properties>
+        <clientProperties>
+          <html.disable class="java.lang.Boolean" value="true"/>
+        </clientProperties>
       </component>
     </children>
   </grid>
