@@ -34,8 +34,8 @@
         </constraints>
         <properties>
           <hideActionText value="true"/>
-          <text value="Help"/>
-          <toolTipText value="Opens a URL we thought would be helpful given your errors"/>
+          <text value="Open"/>
+          <toolTipText value="Opens selected webpage"/>
         </properties>
       </component>
       <component id="c4260" class="javax.swing.JList" binding="websiteList">
@@ -46,7 +46,12 @@
           <gridbag weightx="2.0" weighty="1.0"/>
         </constraints>
         <properties>
-          <toolTipText value="Websites related to your \ncaret position"/>
+          <model>
+            <item value="&quot;;&quot; missing Exception"/>
+            <item value="test"/>
+          </model>
+          <selectionBackground color="-15109738"/>
+          <toolTipText value="Websites related to this project"/>
         </properties>
         <clientProperties>
           <html.disable class="java.lang.Boolean" value="true"/>

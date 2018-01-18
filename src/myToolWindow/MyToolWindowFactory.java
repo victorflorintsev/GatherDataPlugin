@@ -12,6 +12,8 @@ import com.intellij.ui.content.ContentFactory;
 import com.intellij.util.concurrency.EdtExecutorService;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,34 +41,50 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
   private JPanel myToolWindowContent;
   private JButton openButton;
-  private JList websiteList;
+
   private ToolWindow myToolWindow;
+
+  private JList websiteList;
+  private static DefaultListModel<WebsiteElement> listModel;
+  MySelectionListener listListener;
 
 
   public MyToolWindowFactory() {
-    hideToolWindowButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        myToolWindow.hide(null);
-        off = true;
-      }
-    });
-    startButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        /* insert code */
-      }
-    });
+      setUpWebsiteList();
+      startButton.addActionListener(new StartListener());
+      openButton.addActionListener(new OpenListener());
+      hideToolWindowButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e)
+            {
+                myToolWindow.hide(null);
+                off = true;
+            }
+        });
   }
 
-  // Create the tool window content.
+    private void setUpWebsiteList() {
+        listModel = new DefaultListModel();
+        listModel.addElement(new WebsiteElement("Syntax Error: Missing Semi Colon", "http://www.dreamincode.net/forums/topic/13095-syntax-error-missing-semi-colon/"));
+        listModel.addElement(new WebsiteElement("How to solve error: ';' expected in Java?", "https://stackoverflow.com/questions/35261567/how-to-solve-error-expected-in-java"));
+        listModel.addElement(new WebsiteElement("Are semicolons required in Java?","https://stackoverflow.com/questions/22287337/are-semicolons-required-in-java"));
+        //Create the list and put it in a scroll pane.
+        websiteList.setModel(listModel);
+        websiteList.setFixedCellHeight(120);
+        websiteList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        websiteList.setSelectedIndex(0);
+        listListener = new MySelectionListener();
+        websiteList.addListSelectionListener(listListener);
+
+        websiteList.setVisibleRowCount(5);
+        websiteList.updateUI();
+    }
+
+    // Create the tool window content.
   public void createToolWindowContent(Project project, ToolWindow toolWindow) {
-    startButton.addActionListener(new StartListener());
-    openButton.addActionListener(new OpenListener());
     myToolWindow = toolWindow;
     ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
     Content content = contentFactory.createContent(myToolWindowContent, "", false);
     toolWindow.getContentManager().addContent(content);
-
-
 //    AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
 //            @Override
 //            public void run() {
@@ -79,6 +97,9 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 //        }, 15, 3L , SECONDS);
   }
 
+    public static DefaultListModel<WebsiteElement> getListModel() {
+        return listModel;
+    }
 
     public class StartListener implements ActionListener {
 
@@ -112,10 +133,21 @@ public class MyToolWindowFactory implements ToolWindowFactory {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                String url = URL;
+                WebsiteElement element = listModel.elementAt(listListener.getIndex());
+                String url = element.website;
                 Desktop.getDesktop().browse(new URL(url).toURI());
             } catch (Exception e2) {
                 e2.printStackTrace(); }
+        }
+    }
+
+    private class MySelectionListener implements ListSelectionListener {
+        private int index = 0;
+        public int getIndex() {return index;}
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+            index = websiteList.getSelectedIndex();
+            // System.out.println("index = " + index);
         }
     }
 }
