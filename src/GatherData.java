@@ -92,7 +92,7 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
         searchSystem.addTerms(caretSystem.getTerms(event));
 
         // searchSystem.updateHelpButton();
-        // searchSystem.updateWebsiteList(MyToolWindowFactory.getWebsiteList()); ToDo: fix implementation here
+        searchSystem.updateWebsiteList();
 
         //MyToolWindowFactory.URL = errorSystem.search(); // sets the URL of the help button
         // this is kind of wonky, lets create a search class

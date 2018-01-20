@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.net.URL;
+import java.util.Random;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -46,7 +47,7 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
   private JList websiteList;
   private static DefaultListModel<WebsiteElement> listModel;
-  MySelectionListener listListener;
+  private static MySelectionListener listListener;
 
 
   public MyToolWindowFactory() {
@@ -61,12 +62,34 @@ public class MyToolWindowFactory implements ToolWindowFactory {
             }
         });
   }
+    public static void addWebsite(String title, String website) {
+      int max_length = 5;
+      int length = listModel.getSize();
+
+      if (max_length > length) {
+          listModel.addElement(new WebsiteElement(title, website));
+      }
+      else {
+          // select a random one to remove
+          int random_index = new Random().nextInt(max_length);
+          int selected_index = listListener.getIndex();
+          if (random_index == selected_index) {
+              random_index = (random_index + 1) % max_length;
+          } // unless the random one is the selected one, in which case
+          // you increment it by one, modulo length to get next logical element.
+          // this only works because only one element can be selected.
+          listModel.removeElementAt(random_index);
+          listModel.addElement(new WebsiteElement(title, website));
+      }
+      // listListener.index;
+    }
 
     private void setUpWebsiteList() {
         listModel = new DefaultListModel();
         listModel.addElement(new WebsiteElement("Syntax Error: Missing Semi Colon", "http://www.dreamincode.net/forums/topic/13095-syntax-error-missing-semi-colon/"));
         listModel.addElement(new WebsiteElement("How to solve error: ';' expected in Java?", "https://stackoverflow.com/questions/35261567/how-to-solve-error-expected-in-java"));
         listModel.addElement(new WebsiteElement("Are semicolons required in Java?","https://stackoverflow.com/questions/22287337/are-semicolons-required-in-java"));
+
         //Create the list and put it in a scroll pane.
         websiteList.setModel(listModel);
         websiteList.setFixedCellHeight(120);
@@ -77,6 +100,8 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
         websiteList.setVisibleRowCount(5);
         websiteList.updateUI();
+
+
     }
 
     // Create the tool window content.
@@ -144,6 +169,7 @@ public class MyToolWindowFactory implements ToolWindowFactory {
     private class MySelectionListener implements ListSelectionListener {
         private int index = 0;
         public int getIndex() {return index;}
+
         @Override
         public void valueChanged(ListSelectionEvent e) {
             index = websiteList.getSelectedIndex();
