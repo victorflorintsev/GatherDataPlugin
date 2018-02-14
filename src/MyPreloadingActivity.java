@@ -29,6 +29,7 @@ public class MyPreloadingActivity extends PreloadingActivity {
  */
         System.out.println("preloading working");
 
+
 //        AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
 //            @Override
 //            public void run() {

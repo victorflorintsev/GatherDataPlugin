@@ -66,11 +66,10 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
         // called when the component closes (when project closes)
     }
 
+         // when gather data is clicked on right click menu in editor...
+         // also when gather data is called automatically every 5 seconds in MyToolWindowFactory
     @Override
     public void actionPerformed(AnActionEvent event) {
-
-        // when gather data is clicked on right click menu in editor...
-        // also when gather data is called automatically every 5 seconds, changed in MyToolWindowFactory
 
         // extract Project from AnActionEvent instance
         project = event.getRequiredData(LangDataKeys.PROJECT);
@@ -81,21 +80,21 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
         // the output text of the error module is located in errorSystem.getText
         // System.out.println(errorSystem.getText()); // This the current Error/Warning system text
 
-        CaretSystem caretSystem = new CaretSystem(project);
+        CaretSystem caretSystem = new CaretSystem(event);
 
-        int lineNumber = caretSystem.getLineNumber(event); // default 0
+        // int lineNumber = caretSystem.getLineNumber(event); // default 0
 
         int range = 2; // will search the errors around the above line number
 
         SearchSystem searchSystem = new SearchSystem();
-        searchSystem.addTerms(errorSystem.getTerms(lineNumber, range));
-        searchSystem.addTerms(caretSystem.getTerms(event));
 
-        // searchSystem.updateHelpButton();
-        searchSystem.updateWebsiteList();
+        searchSystem.generateQuery(caretSystem, errorSystem,event);
 
-        //MyToolWindowFactory.URL = errorSystem.search(); // sets the URL of the help button
-        // this is kind of wonky, lets create a search class
+        searchSystem.updateWebsiteList(); // updates the JList on MyToolWindowFactory
+
+        // searchSystem.addTerms(errorSystem.getTerms(caretSystem, range));
+        // searchSystem.addTerms(caretSystem.getTerms(event));
+
 
         // final Editor editor = event.getRequiredData(LangDataKeys.EDITOR);
         // final Document document = editor.getDocument();
@@ -124,16 +123,7 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
 //        }
 //
 //        Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList, "Project Properties");
-//
-//
-//        PsiClass psiClass = getPsiClassFromContent(event);
 
-
-        //below will print HTML data, save it to a file and open in browser to compare
-        //System.out.println(doc.html());
-
-
-        // Action must be registered in plugin.xml
     }
 
     private ErrorSystem getErrorSystem(Project project) {

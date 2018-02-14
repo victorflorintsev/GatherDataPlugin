@@ -8,8 +8,10 @@ import com.intellij.openapi.util.TextRange;
 
 public class CaretSystem {
     Project project;
-    public CaretSystem(Project input_project) {
-        project = input_project;
+    int lineNumber = 0;
+    public CaretSystem(AnActionEvent inputEvent) {
+        project = inputEvent.getProject();
+        this.getLineNumber(inputEvent);
     }
 
     public String getTerms(AnActionEvent event) {
@@ -53,8 +55,13 @@ public class CaretSystem {
             final int start = selectionModel.getSelectionStart();
             int lineNumber = document.getLineNumber(start);
             System.out.println("Line number: "+lineNumber);
+            this.lineNumber = lineNumber;
             return lineNumber;
         }
         else return 0;
+    }
+
+    public int getLineNumber() {
+        return lineNumber;
     }
 }

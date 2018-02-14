@@ -1,54 +1,42 @@
-import myToolWindow.MyToolWindowFactory;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import myToolWindow.*;
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
 public class SearchSystem {
     private String toSearch = " ";
+    private String lastToSearch = " ";
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
 
     public void addTerms(String terms) {
         if (!terms.equals("")) toSearch += " " + terms;
     }
-    public void updateHelpButton() {
-//        String searchTerm = toSearch + " site:stackoverflow.com";
-//        int num = 1;
-//        String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+num;
-//        //without proper User-Agent, we will get 403 error
-//        String url = "http://www.google.com"; // default output
-//
-//        try {
-//            org.jsoup.nodes.Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
-//            Elements results = doc.select("h3.r > a");
-////            for (Element result : results) {
-////                String linkHref = result.attr("href");
-////                if (url.equals("http://www.google.com")) {
-////                    url = linkHref.substring(7, linkHref.indexOf("&"));
-////                }
-////                String linkText = result.text();
-////                System.out.println("Text::" + linkText + ", URL::" + linkHref.substring(6, linkHref.indexOf("&")));
-////            }
-//            String linkHref = results.first().attr("href");
-//            url = linkHref.substring(7, linkHref.indexOf("&"));
-//
-//        } catch (IOException e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//        MyToolWindowFactory.URL = url;
-    }
 
-    public void updateWebsiteList() {
-        String searchTerm = toSearch + " site:stackoverflow.com";
-        int num = 5; // number of entries
-        String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+num;
-        //without proper User-Agent, we will get 403 error
-        String url = "http://www.google.com"; // default output
+    public void updateWebsiteList() { // searches and adds a website to the JList in MyToolWindowFactory
+    if (!toSearch.equals(lastToSearch)) {
+        System.out.println("Searching: " + toSearch);
+        String searchTerm = toSearch + " site:www.stackoverflow.com/ ";
+        int num = 2; // number of entries at a time
+
+        // if (searchTerm.equals(" ")) searchTerm = "";
+        String searchURL = GOOGLE_SEARCH_URL + "?q=" + searchTerm + "&num=" + num;
+        searchURL = searchURL.replaceAll(" ","%20");
+        searchURL = searchURL.replaceAll("'","%27");
+
 
         try {
-            org.jsoup.nodes.Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
+            org.jsoup.nodes.Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get(); //without proper User-Agent, we will get 403 error
+
             Elements results = doc.select("h3.r > a");
+
+            for (Element result : results) {
+                String linkHref = result.attr("href");
+                String url = linkHref.substring(7, linkHref.indexOf("&"));
+                MyToolWindowFactory.addWebsite(result.text(), url);
+            }
 //            for (Element result : results) {
 //                String linkHref = result.attr("href");
 //                if (url.equals("http://www.google.com")) {
@@ -57,15 +45,34 @@ public class SearchSystem {
 //                String linkText = result.text();
 //                System.out.println("Text::" + linkText + ", URL::" + linkHref.substring(6, linkHref.indexOf("&")));
 //            }
-            String linkHref = results.first().attr("href");
-            url = linkHref.substring(7, linkHref.indexOf("&"));
-
-            if (!toSearch.equals("")) MyToolWindowFactory.addWebsite(results.first().text(),url);
 
         } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+            System.out.println(e.getMessage() + " : " + searchURL);
 
-        MyToolWindowFactory.URL = url;
+        }
+        lastToSearch = toSearch;
+    }
+
+
+    }
+
+    public void generateQuery(CaretSystem caretSystem, ErrorSystem errorSystem, AnActionEvent event) {
+        toSearch = "Java ";
+        toSearch += addType(caretSystem, event);
+        toSearch += errorSystem.getTerms(caretSystem,4);
+
+    }
+
+    private String addType(CaretSystem caretSystem, AnActionEvent event) {
+        String test = caretSystem.getTerms(event);
+        if (test.contains("int")) return "int ";
+
+        if (test.contains("String")) return "String ";
+
+        if (test.contains("double")) return "double ";
+
+        if (test.contains("scanner") || test.contains("Scanner")) return "Scanner ";
+
+        return "";
     }
 }

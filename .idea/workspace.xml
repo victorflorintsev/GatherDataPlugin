@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutomaticModuleUnloader">
+    <option name="modules">
+      <list>
+        <option value="GatherDataPlugin" />
+      </list>
+    </option>
+    <loaded-modules>
+      <module name="GatherDataPlugin" />
+    </loaded-modules>
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/GatherData.java" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="907a045c-e36f-4623-8cd2-e04e2fd9f272" name="Default" comment="">
+    <list default="true" id="907a045c-e36f-4623-8cd2-e04e2fd9f272" name="Default" comment="State of the plugin during the pilot test. Before StORMeD integration.">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem$VicError.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem$VicError.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/ErrorSystem.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/MyPreloadingActivity.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/MyPreloadingActivity.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/myToolWindow/MyToolWindowFactory$1.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/myToolWindow/MyToolWindowFactory$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/GatherDataPlugin/myToolWindow/MyToolWindowFactory.class" afterPath="$PROJECT_DIR$/out/production/GatherDataPlugin/myToolWindow/MyToolWindowFactory.class" />
+      <change beforePath="$PROJECT_DIR$/src/CaretSystem.java" afterPath="$PROJECT_DIR$/src/CaretSystem.java" />
+      <change beforePath="$PROJECT_DIR$/src/ErrorSystem.java" afterPath="$PROJECT_DIR$/src/ErrorSystem.java" />
       <change beforePath="$PROJECT_DIR$/src/GatherData.java" afterPath="$PROJECT_DIR$/src/GatherData.java" />
+      <change beforePath="$PROJECT_DIR$/src/MyPreloadingActivity.java" afterPath="$PROJECT_DIR$/src/MyPreloadingActivity.java" />
       <change beforePath="$PROJECT_DIR$/src/SearchSystem.java" afterPath="$PROJECT_DIR$/src/SearchSystem.java" />
       <change beforePath="$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java" afterPath="$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/stormed/target/" />
+    <ignored path="$PROJECT_DIR$/src/stormed/target/" />
+    <ignored path="$PROJECT_DIR$/src/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,70 +46,69 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/GatherDataPlugin$Stormed.coverage" NAME="Stormed Coverage Results" MODIFIED="1518317864722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GatherData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GatherData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3000#3072#0" expanded="false" />
-                <element signature="e#7844#7845#0" expanded="true" />
-                <element signature="e#7880#7881#0" expanded="true" />
-                <element signature="e#8682#8683#0" expanded="true" />
-                <element signature="e#8723#8724#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SearchSystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SearchSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="803">
-              <caret line="62" column="25" lean-forward="false" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+            <state relative-caret-position="770">
+              <caret line="61" column="56" lean-forward="true" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#378#379#0" expanded="true" />
-                <element signature="e#2148#2194#0" expanded="false" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
+                <element signature="e#1542#1588#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaretSystem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CaretSystem.java">
+      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ErrorSystem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ErrorSystem.java">
+      <file leaf-file-name="GatherDataPlugin.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GatherDataPlugin.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5225">
-              <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyToolWindowFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java">
+      <file leaf-file-name="GatherData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GatherData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+            <state relative-caret-position="926">
+              <caret line="197" column="38" lean-forward="false" selection-start-line="197" selection-start-column="38" selection-end-line="197" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4284#4378#0" expanded="false" />
-                <element signature="e#5009#5010#0" expanded="true" />
-                <element signature="e#5041#5042#0" expanded="true" />
+                <element signature="e#2992#3064#0" expanded="false" />
+                <element signature="e#7510#7511#0" expanded="true" />
+                <element signature="e#7546#7547#0" expanded="true" />
+                <element signature="e#8389#8390#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,9 +119,54 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="770">
               <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyPreloadingActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyPreloadingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1430">
+              <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaretSystem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CaretSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1760">
+              <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
               <folding>
-                <element signature="e#355#356#0" expanded="true" />
-                <element signature="e#384#385#0" expanded="true" />
+                <element signature="e#2513#2514#0" expanded="true" />
+                <element signature="e#2546#2547#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorSystem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ErrorSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5170">
+              <caret line="101" column="13" lean-forward="false" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyToolWindowFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6765">
+              <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4682#4776#0" expanded="false" />
+                <element signature="e#5407#5408#0" expanded="true" />
+                <element signature="e#5439#5440#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,17 +175,10 @@
       <file leaf-file-name="ReadMe.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ReadMe.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1265">
+            <state relative-caret-position="928">
               <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyToolWindow.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myToolWindow/MyToolWindow.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -176,20 +238,29 @@
         <option value="$PROJECT_DIR$/src/MyCustomToolWindowFactory.java" />
         <option value="$PROJECT_DIR$/out/production/GatherDataPlugin/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/ErrorSystem.java" />
         <option value="$PROJECT_DIR$/ReadMe.txt" />
         <option value="$PROJECT_DIR$/src/moveCaretAction.java" />
-        <option value="$PROJECT_DIR$/src/MyPreloadingActivity.java" />
         <option value="$PROJECT_DIR$/src/WestCoastScheduledExecutor.java" />
-        <option value="$PROJECT_DIR$/src/CaretSystem.java" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/myToolWindow/WebsiteList.java" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa9808.31404/ListDemo.java" />
         <option value="$PROJECT_DIR$/src/WebsiteElement.java" />
         <option value="$PROJECT_DIR$/src/myToolWindow/WebsiteElement.java" />
         <option value="$PROJECT_DIR$/src/myToolWindow/MyToolWindow.form" />
-        <option value="$PROJECT_DIR$/src/GatherData.java" />
+        <option value="$PROJECT_DIR$/src/ErrorSystem.java" />
         <option value="$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java" />
+        <option value="$PROJECT_DIR$/src/CaretSystem.java" />
+        <option value="$PROJECT_DIR$/stormed/pom.xml" />
+        <option value="$PROJECT_DIR$/src/GatherData.java" />
+        <option value="$PROJECT_DIR$/src/stormed/src/main/java/Stormed.java" />
+        <option value="$PROJECT_DIR$/stormed/src/main/java/Stormed.java" />
+        <option value="$PROJECT_DIR$/stormed/target/Stormed.java" />
+        <option value="$PROJECT_DIR$/src/pom.xml" />
+        <option value="$PROJECT_DIR$/src/myToolWindow/Stormed.java" />
+        <option value="$PROJECT_DIR$/src/StormedClientJavaExample.java" />
+        <option value="$PROJECT_DIR$/src/StormedAPI.java" />
+        <option value="$PROJECT_DIR$/src/stormed/java/ch/usi/inf/reveal/parsing/stormed/service/StormedTaggingJavaExample.java" />
+        <option value="$PROJECT_DIR$/src/MyPreloadingActivity.java" />
         <option value="$PROJECT_DIR$/src/SearchSystem.java" />
       </list>
     </option>
@@ -207,6 +278,13 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="MavenProjectNavigator">
     <treeState>
       <expand />
@@ -214,9 +292,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="116" />
-    <option name="width" value="3370" />
-    <option name="height" value="2055" />
+    <option name="x" value="1416" />
+    <option name="width" value="2345" />
+    <option name="height" value="1274" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -234,10 +312,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,19 +323,12 @@
             <path>
               <item name="GatherDataPlugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="GatherDataPlugin" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GatherDataPlugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="GatherDataPlugin" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GatherDataPlugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GatherDataPlugin" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="myToolWindow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GatherDataPlugin" type="b2602c69:ProjectViewProjectNode" />
@@ -272,11 +340,18 @@
               <item name="GatherDataPlugin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="myToolWindow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GatherDataPlugin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,35 +360,41 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/cmd/git.exe" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../stormed-client" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="1388" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="707" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="SearchEverywhereHistoryKey" value="My&#9;FILE&#9;file://C:/Users/victo/Desktop/GatherDataPlugin/src/myToolWindow" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="ToolWindowCoverage.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-      <recent name="myToolWindow" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\src" />
+      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\stormed\target" />
+      <recent name="C:\Users\victo\Desktop\GatherDataPlugin" />
       <recent name="C:\Users\victo\Desktop\GatherDataPlugin\src\myToolWindow" />
+      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\out\production\GatherDataPlugin\myToolWindow" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="myToolWindow" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\src" />
+      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\src\myToolWindow" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\src\myToolWindow" />
-      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\out\production\GatherDataPlugin\myToolWindow" />
-      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\out\production\GatherDataPlugin" />
-      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\out\production\GatherDataPlugin\META-INF" />
-      <recent name="C:\Users\victo\Desktop\GatherDataPlugin\resources\myToolWindow" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="myToolWindow" />
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -427,6 +508,11 @@
       <item index="1" class="java.lang.String" itemvalue="Plugin.IntelliJ" />
     </list>
   </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
@@ -490,7 +576,20 @@
       <workItem from="1516133922925" duration="7160000" />
       <workItem from="1516243421726" duration="200000" />
       <workItem from="1516243727131" duration="11108000" />
-      <workItem from="1516411978072" duration="2662000" />
+      <workItem from="1516411978072" duration="4963000" />
+      <workItem from="1516430905086" duration="2846000" />
+      <workItem from="1516591627612" duration="50000" />
+      <workItem from="1516905011273" duration="3790000" />
+      <workItem from="1517244479450" duration="2638000" />
+      <workItem from="1517497370443" duration="79000" />
+      <workItem from="1517497533804" duration="5820000" />
+      <workItem from="1517845604756" duration="78000" />
+      <workItem from="1518314366404" duration="4024000" />
+      <workItem from="1518318503126" duration="722000" />
+      <workItem from="1518563461257" duration="1049000" />
+      <workItem from="1518579759642" duration="509000" />
+      <workItem from="1518580351159" duration="1331000" />
+      <workItem from="1518582334883" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="oops, mislabelled">
       <created>1505938741097</created>
@@ -660,15 +759,21 @@
       <option name="project" value="LOCAL" />
       <updated>1516299841272</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Now updates one website at a time to the list every few seconds with negligible lag after pressing start">
+      <created>1516417372827</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1516417372827</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144910000" />
+    <option name="totallyTimeSpent" value="171135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-18" y="-18" width="3876" height="2076" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="StackInTheFlow" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -678,19 +783,19 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37224537" sideWeight="0.24479736" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21197411" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35411766" sideWeight="0.75520265" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29411766" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08845739" sideWeight="0.49635702" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35411766" sideWeight="0.75520265" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32149202" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1658576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.289644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298274" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15882353" sideWeight="0.83871853" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44588235" sideWeight="0.83871853" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -698,6 +803,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20064725" sideWeight="0.503643" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.49676377" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -735,6 +841,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnloadedModulesList">
+    <module name="GatherData" />
+  </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
       <list>
@@ -768,120 +877,21 @@
     <MESSAGE value="After much difficulty, finally the scheduled task runs in the background, it's messy right now, you start the task using the help button, which is the same button it updates, I know, pretty much unusable but it's bug free so I thought I'd update this, will restore functionality soon." />
     <MESSAGE value="Cleaned up tool window, added list. Cleaned up code. ToDo: synchronize the JList with scheduled task. Also, I added a start button that starts the scheduled task. Keep in mind, scheduled task automatically turns off when tool window is hidden. Can be changed." />
     <MESSAGE value="Working demo of the JList, still doesn't update the list when you click start but the process is running, next step is to update the JList live." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working demo of the JList, still doesn't update the list when you click start but the process is running, next step is to update the JList live." />
+    <MESSAGE value="Now updates one website at a time to the list every few seconds with negligible lag after pressing start" />
+    <MESSAGE value="State of the plugin during the pilot test. Before StORMeD integration." />
+    <option name="LAST_COMMIT_MESSAGE" value="State of the plugin during the pilot test. Before StORMeD integration." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="62" />
+      <option name="time" value="76" />
     </breakpoint-manager>
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ErrorSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="63" column="46" lean-forward="false" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/GatherDataPlugin/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GatherData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1349">
-          <caret line="71" column="132" lean-forward="true" selection-start-line="71" selection-start-column="132" selection-end-line="71" selection-end-column="132" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3000#3072#0" expanded="false" />
-            <element signature="e#7844#7845#0" expanded="true" />
-            <element signature="e#7880#7881#0" expanded="true" />
-            <element signature="e#8682#8683#0" expanded="true" />
-            <element signature="e#8723#8724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyCustomToolWindowFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/ErrorSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/GatherDataPlugin/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="49" column="78" lean-forward="false" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/GatherDataPlugin/myToolWindow/MyToolWindowFactory.class" />
-    <entry file="file://$PROJECT_DIR$/out/production/GatherDataPlugin/ToolWindowComponent.class" />
-    <entry file="file://$PROJECT_DIR$/out/production/GatherDataPlugin/GatherData.class" />
-    <entry file="file://$PROJECT_DIR$/src/MyCustomToolWindowFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/myToolWindow/MyToolWindow.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="56" column="4" lean-forward="false" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4284#4378#0" expanded="false" />
-            <element signature="e#5009#5010#0" expanded="true" />
-            <element signature="e#5041#5042#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/openapi/application/impl/ReadMostlyRWLock.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/openapi/application/impl/ApplicationImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="66" column="39" lean-forward="false" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/com/intellij/util/io/storage/HeavyProcessLatch.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -959,25 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyPreloadingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WestCoastScheduledExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#348#349#0" expanded="false" />
-            <element signature="e#383#384#0" expanded="false" />
-            <element signature="e#898#899#0" expanded="false" />
-            <element signature="e#956#957#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,7 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,14 +1025,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ErrorSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5225">
-          <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/openapi/application/TransactionGuardImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1595">
@@ -1053,47 +1039,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CaretSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ReadMe.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2915">
           <caret line="53" column="28" lean-forward="false" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myToolWindow/WebsiteList.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa9808.31404/ListDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa9808.31404/ListDemo.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/JList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1151">
           <caret line="1647" column="24" lean-forward="false" selection-start-line="1647" selection-start-column="24" selection-end-line="1647" selection-end-column="24" />
-          <folding>
-            <element signature="e#62667#62668#0" expanded="true" />
-            <element signature="e#62699#62700#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1101,10 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1118,54 +1072,261 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6765">
+          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4682#4776#0" expanded="false" />
+            <element signature="e#5407#5408#0" expanded="true" />
+            <element signature="e#5439#5440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CaretSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+          <folding>
+            <element signature="e#2513#2514#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ErrorSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5170">
+          <caret line="101" column="13" lean-forward="false" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/a:a:1.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>a:a:1.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">a:a:1.0-SNAPSHOT</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.apple:AppleJavaExtensions:jar:1.4</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/de.jollyday:jollyday:jar:0.4.9</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/de.jollyday:jollyday:jar:0.4.9/joda-time:joda-time:jar:2.4</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/de.jollyday:jollyday:jar:0.4.9/javax.xml.bind:jaxb-api:jar:2.2.7</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.commons:commons-lang3:jar:3.3.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.lucene:lucene-queryparser:jar:4.10.3</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.lucene:lucene-queryparser:jar:4.10.3/org.apache.lucene:lucene-core:jar:4.10.3</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.lucene:lucene-queryparser:jar:4.10.3/org.apache.lucene:lucene-sandbox:jar:4.10.3</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.lucene:lucene-analyzers-common:jar:4.10.3</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.lucene:lucene-queries:jar:4.10.3</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.lucene:lucene-queries:jar:4.10.3/org.apache.lucene:lucene-core:jar:6.3.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.apache.lucene:lucene-core:jar:6.3.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/javax.servlet:javax.servlet-api:jar:3.0.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.io7m.xom:xom:jar:1.2.10</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.io7m.xom:xom:jar:1.2.10/xml-apis:xml-apis:jar:1.3.03</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.io7m.xom:xom:jar:1.2.10/xerces:xercesImpl:jar:2.8.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.io7m.xom:xom:jar:1.2.10/xalan:xalan:jar:2.7.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.io7m.xom:xom:jar:1.2.10/xalan:xalan:jar:2.7.0/xml-apis:xml-apis:jar:1.0.b2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/joda-time:joda-time:jar:2.9</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.googlecode.efficient-java-matrix-library:ejml:jar:0.23</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.glassfish:javax.json:jar:1.0.4</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/org.slf4j:slf4j-api:jar:1.7.12</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:3.7.0/com.google.protobuf:protobuf-java:jar:2.6.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:models:3.7.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:models:3.7.0/org.apache.lucene:lucene-analyzers-common:jar:6.3.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-corenlp:jar:models:3.7.0/org.apache.lucene:lucene-core:jar:6.3.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/edu.stanford.nlp:stanford-parser:jar:3.7.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.scala-lang:scala-library:jar:2.12.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/org.json4s:json4s-ast_2.12:jar:3.5.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/org.json4s:json4s-ast_2.12:jar:3.5.1/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/org.json4s:json4s-scalap_2.12:jar:3.5.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/org.json4s:json4s-scalap_2.12:jar:3.5.1/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/com.thoughtworks.paranamer:paranamer:jar:2.8</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/org.scala-lang.modules:scala-xml_2.12:jar:1.0.6</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-native_2.12:jar:3.5.1/org.json4s:json4s-core_2.12:jar:3.5.1/org.scala-lang.modules:scala-xml_2.12:jar:1.0.6/org.scala-lang:scala-library:jar:2.12.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-ext_2.12:jar:3.5.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-ext_2.12:jar:3.5.1/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-ext_2.12:jar:3.5.1/joda-time:joda-time:jar:2.9.5</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.json4s:json4s-ext_2.12:jar:3.5.1/org.joda:joda-convert:jar:1.8.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/com.typesafe.scala-logging:scala-logging_2.12:jar:3.5.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/com.typesafe.scala-logging:scala-logging_2.12:jar:3.5.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/com.typesafe.scala-logging:scala-logging_2.12:jar:3.5.0/org.scala-lang:scala-reflect:jar:2.12.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/com.typesafe.scala-logging:scala-logging_2.12:jar:3.5.0/org.scala-lang:scala-reflect:jar:2.12.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/com.typesafe.scala-logging:scala-logging_2.12:jar:3.5.0/org.slf4j:slf4j-api:jar:1.7.21</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/com.google.code.findbugs:jsr305:jar:3.0.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/com.google.guava:guava:jar:19.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/org.bitbucket.inkytonik.dsinfo:dsinfo_2.12:jar:0.4.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/org.bitbucket.inkytonik.dsinfo:dsinfo_2.12:jar:0.4.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/org.bitbucket.inkytonik.dsprofile:dsprofile_2.12:jar:0.4.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/org.bitbucket.inkytonik.dsprofile:dsprofile_2.12:jar:0.4.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/org.rogach:scallop_2.12:jar:1.0.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/org.rogach:scallop_2.12:jar:1.0.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.bitbucket.inkytonik.kiama:kiama_2.12:jar:2.0.0/jline:jline:jar:2.14.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.scalanlp:breeze-macros_2.12:jar:0.13</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.scalanlp:breeze-macros_2.12:jar:0.13/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.scalanlp:breeze-macros_2.12:jar:0.13/org.scala-lang:scala-reflect:jar:2.12.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/com.github.fommil.netlib:core:jar:1.1.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/net.sourceforge.f2j:arpack_combined_all:jar:0.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/net.sf.opencsv:opencsv:jar:2.3</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/com.github.rwl:jtransforms:jar:2.4.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/com.github.rwl:jtransforms:jar:2.4.0/junit:junit:jar:4.8.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.apache.commons:commons-math3:jar:3.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.spire-math:spire_2.12:jar:0.13.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.spire-math:spire_2.12:jar:0.13.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.spire-math:spire_2.12:jar:0.13.0/org.spire-math:spire-macros_2.12:jar:0.13.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.spire-math:spire_2.12:jar:0.13.0/org.spire-math:spire-macros_2.12:jar:0.13.0/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.spire-math:spire_2.12:jar:0.13.0/org.typelevel:machinist_2.12:jar:0.6.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.spire-math:spire_2.12:jar:0.13.0/org.typelevel:machinist_2.12:jar:0.6.1/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/com.chuusai:shapeless_2.12:jar:2.3.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/com.chuusai:shapeless_2.12:jar:2.3.2/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/com.chuusai:shapeless_2.12:jar:2.3.2/org.typelevel:macro-compat_2.12:jar:1.1.1</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/com.chuusai:shapeless_2.12:jar:2.3.2/org.typelevel:macro-compat_2.12:jar:1.1.1/org.scala-lang:scala-library:jar:2.12.2</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.scalanlp:breeze_2.12:jar:0.13/org.slf4j:slf4j-api:jar:1.7.5</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.apache.lucene:lucene-core:jar:6.3.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.apache.lucene:lucene-analyzers-common:jar:6.3.0</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/org.jsoup:jsoup:jar:1.7.3</node>
+            <node x="" y="">ch.usi.inf.reveal.parsing:stormed-devkit_2.12:jar:2.0.0/raykernel:code-readability:jar:1.0</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.09393850228041783" x="6787.0" y="628.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stormed/target/classes/Stormed.class" />
+    <entry file="file://$PROJECT_DIR$/stormed/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/stormed/target/Stormed.java" />
+    <entry file="file://$PROJECT_DIR$/src/StormedClientJavaExample.java" />
+    <entry file="file://$PROJECT_DIR$/src/StormedAPI.java" />
+    <entry file="file://$PROJECT_DIR$/../stormed-client/src/main/java/ch/usi/inf/reveal/parsing/stormed/service/StormedClientJavaExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../stormed-client/src/main/java/ch/usi/inf/reveal/parsing/stormed/service/StormedTaggingJavaExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stormed/java/ch/usi/inf/reveal/parsing/stormed/service/StormedClientJavaExample.java" />
+    <entry file="file://$PROJECT_DIR$/src/stormed/java/ch/usi/inf/reveal/parsing/stormed/service/StormedTaggingJavaExample.java" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/ide/plugins/cl/PluginClassLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/idea/MainImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/myToolWindow/WebsiteElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="770">
           <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyPreloadingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1430">
+          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadMe.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GatherData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+        <state relative-caret-position="926">
+          <caret line="197" column="38" lean-forward="false" selection-start-line="197" selection-start-column="38" selection-end-line="197" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3000#3072#0" expanded="false" />
-            <element signature="e#7844#7845#0" expanded="true" />
-            <element signature="e#7880#7881#0" expanded="true" />
-            <element signature="e#8682#8683#0" expanded="true" />
-            <element signature="e#8723#8724#0" expanded="true" />
+            <element signature="e#2992#3064#0" expanded="false" />
+            <element signature="e#7510#7511#0" expanded="true" />
+            <element signature="e#7546#7547#0" expanded="true" />
+            <element signature="e#8389#8390#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myToolWindow/MyToolWindowFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/GatherData.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4284#4378#0" expanded="false" />
-            <element signature="e#5009#5010#0" expanded="true" />
-            <element signature="e#5041#5042#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="55">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GatherDataPlugin.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="62" column="25" lean-forward="false" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+        <state relative-caret-position="770">
+          <caret line="61" column="56" lean-forward="true" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#2148#2194#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#1542#1588#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1222,11 +1383,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>GatherDataPlugin</last-edited>
+          <last-edited>stormed</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1234,6 +1396,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: ch.usi.inf.reveal.parsing:stormed-devkit_2.12:2.0.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1244,5 +1407,8 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$/src/stormed" />
   </component>
 </project>

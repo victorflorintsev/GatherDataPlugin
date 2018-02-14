@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/GatherData.iml" filepath="$PROJECT_DIR$/src/GatherData.iml" />
       <module fileurl="file://$PROJECT_DIR$/GatherDataPlugin.iml" filepath="$PROJECT_DIR$/GatherDataPlugin.iml" />
     </modules>
   </component>

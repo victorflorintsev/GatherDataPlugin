@@ -66,21 +66,29 @@ public class MyToolWindowFactory implements ToolWindowFactory {
       int max_length = 5;
       int length = listModel.getSize();
 
-      if (max_length > length) {
-          listModel.addElement(new WebsiteElement(title, website));
-      }
-      else {
-          // select a random one to remove
-          int random_index = new Random().nextInt(max_length);
-          int selected_index = listListener.getIndex();
-          if (random_index == selected_index) {
-              random_index = (random_index + 1) % max_length;
-          } // unless the random one is the selected one, in which case
-          // you increment it by one, modulo length to get next logical element.
-          // this only works because only one element can be selected.
-          listModel.removeElementAt(random_index);
-          listModel.addElement(new WebsiteElement(title, website));
-      }
+      title = title.substring(0, Math.min(title.length(), 40)); // shorten the string if smaller than 40 characters
+
+        boolean doesContain = false;
+        for (int i = 0; i < length; i++) {
+            if (title.equals(listModel.get(i).title)) doesContain = true;
+        }
+
+        if (!doesContain) {
+            if (max_length > length) {
+                listModel.addElement(new WebsiteElement(title, website));
+            } else {
+                // select a random one to remove
+                int random_index = new Random().nextInt(max_length);
+                int selected_index = listListener.getIndex();
+                if (random_index == selected_index) {
+                    random_index = (random_index + 1) % max_length;
+                } // unless the random one is the selected one, in which case
+                // you increment it by one, modulo length to get next logical element.
+                // this only works because only one element can be selected.
+                listModel.removeElementAt(random_index);
+                listModel.addElement(new WebsiteElement(title, website));
+            }
+        }
       // listListener.index;
     }
 
@@ -130,11 +138,11 @@ public class MyToolWindowFactory implements ToolWindowFactory {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            MyToolWindowFactory.off = false;
             //AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay // bad thread, doesn't work
             EdtExecutorService.getScheduledExecutorInstance().scheduleWithFixedDelay(new Runnable() {
                 @Override
                 public void run() {
-                    MyToolWindowFactory.off = false;
                     try {
                         System.out.println("Scheduled Task Running...");
                         AnAction action = ActionManager.getInstance().getAction("RightClickButton");
@@ -149,7 +157,7 @@ public class MyToolWindowFactory implements ToolWindowFactory {
                     }
                     if (MyToolWindowFactory.off) throw new RuntimeException(); // turn off scheduler when window is hidden
                 }
-            }, 1, 5 , SECONDS);
+            }, 5, 15 , SECONDS);
 
         }
     }

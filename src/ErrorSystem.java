@@ -89,7 +89,8 @@ public class ErrorSystem {
         return text;
     }
 
-    public String getTerms(int lineNumber, int range) {
+    public String getTerms(CaretSystem caretSystem, int range) {
+        int lineNumber = caretSystem.getLineNumber();
         if (!errorVector.isEmpty()) {
             String out = "";
             for (VicError e:errorVector) {
