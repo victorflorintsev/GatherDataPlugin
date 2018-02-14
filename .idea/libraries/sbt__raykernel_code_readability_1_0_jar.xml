@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sbt: raykernel:code-readability:1.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/raykernel/code-readability/jars/code-readability-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

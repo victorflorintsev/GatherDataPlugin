@@ -10,7 +10,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="GatherData" target="1.5" />
+      <module name="src" target="1.7" />
       <module name="stormed" target="1.5" />
+      <module name="stormed-client" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

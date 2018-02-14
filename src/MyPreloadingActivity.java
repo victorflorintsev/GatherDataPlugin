@@ -2,6 +2,7 @@ import com.intellij.openapi.application.PreloadingActivity;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.annotations.NotNull;
+import stormed.java.ch.usi.inf.reveal.parsing.stormed.service.StormedTaggingJavaExample;
 
 /**
  * A {@link PreloadingActivity} to demonstrate how a plugin could run some (possibly expensive)
@@ -28,6 +29,8 @@ public class MyPreloadingActivity extends PreloadingActivity {
     being run without a problem.
  */
         System.out.println("preloading working");
+        StormedTaggingJavaExample example = new StormedTaggingJavaExample();
+        example.test();
 
 
 //        AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
