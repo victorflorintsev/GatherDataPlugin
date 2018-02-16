@@ -1,12 +1,12 @@
 Directions:
 
     This plugin works currently only with IntelliJ, not PyCharm. Running this project will spawn an instance
-of IntelliJ with the plugin installed and running. You will notice there is a window on the left, pressing
-the help button leads you to a web page given by the ErrorSystem object after searching the web for your first
-error.
+of IntelliJ with the plugin installed and running. You will notice there is a window on the right, this window is
+pre-loaded with a few example web pages. Clicking start begins the process that runs every 10 seconds that analyzes
+the line the cursor is on. In GatherData there is a member boolean variable "HAS_TYPE" that determines whether
+to collect type information or not. If HAS_TYPE is set to true, nothing happens, however:
+ToDo: if HAS_TYPE is set to false, an object TypeRemover will delete any instances of the types listed in TypeInfo.txt
 
-    Currently the help button only works after your project has errors and after "Gather Data" is clicked on the
-right click menu when your mouse is over the document editor.
 
 About The Code:
 
@@ -33,6 +33,9 @@ We have:
     - Every Error or Warning in the Error System, in order, line number and error text parsed out to separate variables.
 (Info, Note, Generic are also available in the error system, not sure what those are yet)
 
-ReadMe Updated: 12/11
+ReadMe Updated: 2/16
 
-ToDo: make the process automatic through a process scheduler.
+
+Why?
+    The reason we have the TypeRemover is to analyze the effectiveness of queries with type information removed.
+We believe this will give us information on whether python's lack of types is detrimental to recommender systems.

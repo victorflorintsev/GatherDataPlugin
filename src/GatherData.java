@@ -34,6 +34,8 @@ action extends the AnAction Interface.
 
 
 public class GatherData extends AnAction implements TransparentUpdate, ApplicationComponent  {
+    private final boolean HAS_TYPE = true;
+
     enum IDEType {
         INTELLIJ, PYCHARM
     }
