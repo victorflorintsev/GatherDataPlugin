@@ -1,4 +1,3 @@
-
 import com.intellij.ide.errorTreeView.ErrorTreeElementKind;
 import com.intellij.ide.errorTreeView.ErrorViewStructure;
 import com.intellij.ide.errorTreeView.NewErrorTreeViewPanel;
@@ -21,7 +20,10 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
+import java.net.URL;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 
@@ -34,6 +36,12 @@ action extends the AnAction Interface.
 
 
 public class GatherData extends AnAction implements TransparentUpdate, ApplicationComponent  {
+    private final boolean HAS_TYPE = true;
+
+    int numTypes = 4;
+    boolean typeArrayInstantiated = false;
+    String[] typeArray = new String[numTypes];
+
     enum IDEType {
         INTELLIJ, PYCHARM
     }
@@ -70,6 +78,21 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
          // also when gather data is called automatically every 5 seconds in MyToolWindowFactory
     @Override
     public void actionPerformed(AnActionEvent event) {
+        if (!typeArrayInstantiated) {
+            try {
+                URL file = this.getClass().getResource("TypeInfo.txt");
+                Scanner s = new Scanner(new File(file.getFile()));
+
+                for (int i = 0; i < numTypes; i++) {
+                    typeArray[i] = s.nextLine().replace("[","\\[").replace("]","\\]");
+                }
+                typeArrayInstantiated = true;
+                s.close();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
         // extract Project from AnActionEvent instance
         project = event.getRequiredData(LangDataKeys.PROJECT);
@@ -88,7 +111,7 @@ public class GatherData extends AnAction implements TransparentUpdate, Applicati
 
         SearchSystem searchSystem = new SearchSystem();
 
-        searchSystem.generateQuery(caretSystem, errorSystem,event);
+        searchSystem.generateQuery(caretSystem, errorSystem, event, typeArray, numTypes);
 
         searchSystem.updateWebsiteList(); // updates the JList on MyToolWindowFactory
 

@@ -56,10 +56,15 @@ public class SearchSystem {
 
     }
 
-    public void generateQuery(CaretSystem caretSystem, ErrorSystem errorSystem, AnActionEvent event) {
+    public void generateQuery(CaretSystem caretSystem, ErrorSystem errorSystem, AnActionEvent event, String[] typeArray, int numTypes) {
         toSearch = "Java ";
-        toSearch += addType(caretSystem, event);
+        //toSearch += addType(caretSystem, event);
         toSearch += errorSystem.getTerms(caretSystem,4);
+        toSearch += caretSystem.getTerms(event);
+        toSearch.toLowerCase();
+        for (int i = 0; i < numTypes; i++) {
+            toSearch = toSearch.replaceAll(typeArray[i].toLowerCase(),"");
+        } // removes all type instances
 
     }
 
