@@ -61,7 +61,7 @@ public class SearchSystem {
         //toSearch += addType(caretSystem, event);
         toSearch += errorSystem.getTerms(caretSystem,4);
         toSearch += caretSystem.getTerms(event);
-        toSearch.toLowerCase();
+        toSearch = toSearch.toLowerCase();
         for (int i = 0; i < numTypes; i++) {
             toSearch = toSearch.replaceAll(typeArray[i].toLowerCase(),"");
         } // removes all type instances

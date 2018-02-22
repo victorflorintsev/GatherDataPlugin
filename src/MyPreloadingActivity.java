@@ -2,7 +2,6 @@ import com.intellij.openapi.application.PreloadingActivity;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.annotations.NotNull;
-import stormed.java.ch.usi.inf.reveal.parsing.stormed.service.StormedTagger;
 
 /**
  * A {@link PreloadingActivity} to demonstrate how a plugin could run some (possibly expensive)
@@ -28,11 +27,6 @@ public class MyPreloadingActivity extends PreloadingActivity {
     in a separate thread in the background, a really inefficient sorting algorithm is
     being run without a problem.
  */
-        System.out.println("preloading working");
-        StormedTagger example = new StormedTagger();
-        example.getTagged("int a = 0; \n" +
-                                "int[] a = new int[10];");
-
 
 
 //        AppExecutorUtil.getAppScheduledExecutorService().scheduleWithFixedDelay(new Runnable() {
